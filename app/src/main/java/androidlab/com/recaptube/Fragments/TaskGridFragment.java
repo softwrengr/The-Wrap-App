@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidlab.com.recaptube.Fragments.CFT_Fragments.A_CFTMinutesFragment;
 import androidlab.com.recaptube.R;
 
 public class TaskGridFragment extends Fragment implements View.OnClickListener {

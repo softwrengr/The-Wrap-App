@@ -1,4 +1,4 @@
-package androidlab.com.recaptube.Fragments;
+package androidlab.com.recaptube.Fragments.CFT_Fragments;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
@@ -29,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import androidlab.com.recaptube.Fragments.ClientsFragment;
 import androidlab.com.recaptube.Utils.ZipManager;
 import androidlab.com.recaptube.R;
 
@@ -72,7 +73,6 @@ public class A_CFTMinutesFragment extends Fragment {
         startTime = (TextView) view.findViewById(R.id.startTime);
         endTime = (TextView) view.findViewById(R.id.endTime);
         tvdatepicker = (TextView) view.findViewById(R.id.tvdatepicker);
-//        timeSpinner = (Spinner) view.findViewById(R.id.spinnerSessionType);
 
         sharedPreferences = getActivity().getSharedPreferences("recap", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -84,15 +84,10 @@ public class A_CFTMinutesFragment extends Fragment {
                 Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
 
-            // Permission is not granted
-            // Should we show an explanation?
             if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                     Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
+
             } else {
-                // No explanation needed; request the permission
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
@@ -100,9 +95,6 @@ public class A_CFTMinutesFragment extends Fragment {
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                         MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
 
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
             }
         } else {
             // Permission has already been granted
@@ -130,7 +122,7 @@ public class A_CFTMinutesFragment extends Fragment {
                 int mYear = c1.get(Calendar.YEAR); // current year
                 int mMonth = c1.get(Calendar.MONTH); // current month
                 final int mDay = c1.get(Calendar.DAY_OF_MONTH);
-                // date picker dialog
+
                 final Calendar c = Calendar.getInstance();
                 int hour = c.get(Calendar.HOUR_OF_DAY);
                 int minute = c.get(Calendar.MINUTE);
@@ -141,8 +133,7 @@ public class A_CFTMinutesFragment extends Fragment {
                             @Override
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
-                                // set day of month , month and year value in the edit text
-//                                strDate = (monthOfYear + 1) + "/" + dayOfMonth + "/" + year;
+
                                 strDate = (monthOfYear + 1) + "-" + dayOfMonth + "-" + year;
                                 editor.putInt("Month", monthOfYear + 1).commit();
                                 editor.putInt("Day", mDay).commit();
@@ -154,46 +145,6 @@ public class A_CFTMinutesFragment extends Fragment {
                             }
                         }, mYear, mMonth, mDay);
 
-//                TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
-//                        new TimePickerDialog.OnTimeSetListener() {
-//
-//                            @Override
-//                            public void onTimeSet(TimePicker view, int hourOfDay,
-//                                                  int minute) {
-//                                int hour = hourOfDay;
-//                                int minutes = minute;
-//                                String timeSet = "";
-//                                if (hour > 12) {
-//                                    hour -= 12;
-//                                    timeSet = "PM";
-//                                } else if (hour == 0) {
-//                                    hour += 12;
-//                                    timeSet = "AM";
-//                                } else if (hour == 12) {
-//                                    timeSet = "PM";
-//                                } else {
-//                                    timeSet = "AM";
-//                                }
-//
-//                                String min = "";
-//                                if (minutes < 10)
-//                                    min = "0" + minutes;
-//                                else
-//                                    min = String.valueOf(minutes);
-//
-//                                // Append in a StringBuilder
-//                                aTime = new StringBuilder().append(hour).append(':')
-//                                        .append(min).append(" ").append(timeSet).toString();
-//
-////                                textPreviewDate.setText("The CFS will meet on " + strDate + " at " + aTime + " for what type of meeting?");
-//                                editor.putString("CFTtime", aTime).commit();
-////                                timeSpinner.setVisibility(View.VISIBLE);
-//
-////                                date= Date.parse(strDate+" "+aTime);
-//                                editor.putString("CFTDate", strDate).commit();
-//                            }
-//                        }, hour, minute, false);
-//                timePickerDialog.show();
                 datePickerDialog.show();
             }
         });
@@ -256,10 +207,7 @@ public class A_CFTMinutesFragment extends Fragment {
             public void onClick(View view) {
 
                 final Calendar c1 = Calendar.getInstance();
-                int mYear = c1.get(Calendar.YEAR); // current year
-                int mMonth = c1.get(Calendar.MONTH); // current month
-                final int mDay = c1.get(Calendar.DAY_OF_MONTH);
-                // date picker dialog
+
                 final Calendar c = Calendar.getInstance();
                 int hour = c.get(Calendar.HOUR_OF_DAY);
                 int minute = c.get(Calendar.MINUTE);
