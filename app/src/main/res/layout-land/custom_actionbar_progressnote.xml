@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Grid"
+        android:gravity="center"
+        android:layout_marginTop="5sp"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:id="@+id/textView2"
+        android:textColor="#fff"/>
+
+    <Button
+        android:id="@+id/btnGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="34sp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:text="Goal"
+        android:textSize="18sp"
+        android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
+        android:drawableTint="#fff"
+        android:textColor="#fff"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:paddingRight="7dp"/>
+
+</RelativeLayout>

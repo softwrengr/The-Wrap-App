@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#eee"
+    tools:context="androidlab.com.recaptube.Fragments.SupportTabs.supportTabLayout">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The CFS and the client brainstormed what?"/>
+
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabsSup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        android:background="#eee"
+        app:tabMaxWidth="330dp"
+        app:tabGravity="fill"/>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpagerSup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#eee"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+
+</LinearLayout>

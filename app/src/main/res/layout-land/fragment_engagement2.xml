@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee"
+    tools:context="androidlab.com.recaptube.Fragments.EngagementFragment">
+    <!---->
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_marginTop="10sp"-->
+    <!--android:layout_marginLeft="0dp">-->
+
+    <!--<Button-->
+        <!--android:id="@+id/briefed"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:text="briefed"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/discussed"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="discussed"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:layout_toRightOf="@+id/briefed"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/explained"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="explained"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:layout_toRightOf="@+id/discussed"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/highlighted"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="highlighted"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:layout_below="@+id/briefed"-->
+        <!--android:layout_marginTop="10dp"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/gather_information"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="gathered information"-->
+        <!--android:layout_below="@+id/discussed"-->
+        <!--android:layout_toRightOf="@+id/highlighted"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:layout_marginTop="10dp"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/inquired"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="inquired"-->
+        <!--android:layout_below="@+id/discussed"-->
+        <!--android:layout_toRightOf="@+id/gather_information"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:layout_marginTop="10dp"/>-->
+
+
+    <!--<Button-->
+        <!--android:id="@+id/informed"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="informed"-->
+        <!--android:layout_below="@+id/highlighted"-->
+        <!--android:layout_marginTop="10dp"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/reviewed"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="reviewed"-->
+        <!--android:layout_below="@+id/gather_information"-->
+        <!--android:layout_toRightOf="@+id/informed"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:layout_marginTop="10dp"/>-->
+
+
+    <!--<Button-->
+        <!--android:id="@+id/used_active-listening"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="used active listening "-->
+        <!--android:layout_below="@+id/inquired"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:layout_toRightOf="@+id/reviewed"-->
+        <!--android:layout_marginTop="10dp"/>-->
+
+
+    <!--<Button-->
+        <!--android:id="@+id/usedOpenEndedQuestion"-->
+        <!--android:layout_width="315dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="used open ended questions"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:layout_below="@+id/informed"-->
+        <!--android:layout_marginTop="10dp"/>-->
+<!--</RelativeLayout>-->
+
+
+</LinearLayout>

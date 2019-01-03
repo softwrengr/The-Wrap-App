@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#eee"
+    android:id="@+id/linearLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/contestentImage"
+        android:layout_gravity="center"
+        android:src="@mipmap/client"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30sp"
+        android:text="Adam Noor"
+        android:textColor="#000"
+        android:id="@+id/clientName"
+        android:textSize="15dp"
+        tools:ignore="RtlCompat" />
+</LinearLayout>

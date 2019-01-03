@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title=""
+        android:icon="@drawable/phone"
+        app:showAsAction="always" >
+
+        <menu>
+            <item android:id="@+id/action_menu1"
+                android:title="Call Client" />
+            <item android:id="@+id/action_menu2"
+                android:title="Call caregiver (Ana Maria)" />
+            <item android:id="@+id/action_menu3"
+                android:title="Call social worker (Tina)" />
+            <item android:id="@+id/action_menu4"
+                android:title="Text client" />
+            <item android:id="@+id/action_menu5"
+                android:title="Text caregiver (Ana Maria)" />
+            <item android:id="@+id/action_menu6"
+                android:title="Text social worker (Tina)" />
+        </menu>
+    </item>
+
+</menu>

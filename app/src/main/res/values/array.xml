@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genderSpinner">
+        <item>Gender (HINT)</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="address1">
+        <item>Starting Location</item>
+        <item>Phone</item>
+        <item>Custom</item>
+        <item>My Home</item>
+        <item>SPA 2: Reseda</item>
+        <item>SPA 3: El Monte</item>
+        <item>SPA 4: LA Metro</item>
+        <item>SPA 6: Carson</item>
+        <item>SPA 6: Compton</item>
+        <item>SPA 7: Bellflower</item>
+        <item>SPA 8: Long Beach</item>
+        <item>SPA 8: Torrance</item>
+        <item>Gutierrez, Joey: Home</item>
+        <item>Dakota, Cassie: Home</item>
+        <item>Burka, Robert: Home</item>
+    </string-array>
+    <string-array name="address2">
+        <item>Starting Location</item>
+        <item>Phone</item>
+        <item>My Home</item>
+        <item>Client Address</item>
+        <item>Offices</item>
+        <item>Custom</item>
+        <item>My Home</item>
+    </string-array>
+    <string-array name="moodSpinner">
+        <item>Mood</item>
+        <item>Positive</item>
+        <item>Neutral</item>
+        <item>Negative</item>
+    </string-array>
+    <string-array name="sessionType">
+        <item>Meeting Type</item>
+        <item>an individual rehabilitation session</item>
+        <item>an All Staff CFT</item>
+        <item>a CFT meeting</item>
+        <item>an ITC meeting</item>
+    </string-array>
+</resources>

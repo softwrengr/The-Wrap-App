@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee"
+    tools:context="androidlab.com.recaptube.Fragments.Behavior2k">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/textPreview2K4_1Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textPreview2K4_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="What was the client's mood?"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            android:textSize="24dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/spinnerMood"
+            android:layout_width="220dp"
+            android:entries="@array/moodSpinner"
+            android:layout_height="wrap_content">
+        </Spinner>
+        <Space
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
+        <Switch
+            android:id="@+id/switchClientStated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:text="Stated by client" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/textPreview2K4_2Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textPreview2K4_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Who observed the client's goal progress?"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            android:textSize="24dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spinnerReporter"
+            android:visibility="gone"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content">
+        </Spinner>
+        <Space
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/spinnerGoals"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            >
+        </Spinner>
+        <Space
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
+        <Switch
+            android:id="@+id/switchGoalSuccess"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:checked="true"
+            android:layout_height="wrap_content"
+            android:text="Goal success" />
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

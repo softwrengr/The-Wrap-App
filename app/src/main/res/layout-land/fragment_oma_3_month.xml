@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="androidlab.com.recaptube.Fragments.G_OMA3Month"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Outcome Measures Application (Child 3-Month)" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Caregiver's Wages" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Client's Wages" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Client's Spouse / Significant Other's Wages" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Savings" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Other Family Member / Friend" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Retirement / Social Security Income" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Veteran's Assistance (VA) Benefits" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Loan / Credit" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Housing Subsidy" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="General Relief (GR) / General Assistance (GA)" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Food Stamps" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Temporary Assistance for Needy Families (TANF) / CalWORKs" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Supplemental Security Income / State Supplementary Payment (SSI / SSP)" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Social Security Disability Insurance (SSDI)" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="State Disability Insurance (SDI)" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="American Indian Tribal Benefits" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Unemployment" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Child Support" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Other" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="No Financial Support" />
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="10sp"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/etCaregiverWages"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etClientWages"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etSpouseWages"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etSavings"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etRetirementSocialSecurity"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etVeteranBenefits"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etLoanCredit"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etHousingSubsidy"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etGeneralReliefAssistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etFoodStamps"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etTANFCalWORKs"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etSSISSP"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etSSDI"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etSDI"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etTribalBenefits"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etUnemployment"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etChildSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etOtherWages"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+                <EditText
+                    android:id="@+id/etNoFinancialSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="0" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSubmit2"
+            android:text="Submit"
+            android:textColor="#fff"
+            android:background="#FF4081"
+            android:layout_marginTop="20sp"
+            android:layout_gravity="bottom|center"/>
+    </LinearLayout>
+
+</ScrollView>

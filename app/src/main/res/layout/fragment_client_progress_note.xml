@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="androidlab.com.recaptube.Fragments.ClientProgressNote">>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="945dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:maxLines="5"
+        android:singleLine="false"
+        android:text="The CFS traveled from Los Angeles to Long Beach for a type 1 session with the client, the client's caregiver (Ana Maria), the client's therapist, and the client's social worker."
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp" />
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Phone Session"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginLeft="16dp" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="All team CFT"
+        app:layout_constraintStart_toEndOf="@+id/switch1"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginLeft="8dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1">
+
+        <Spinner
+            android:id="@+id/address_spinner1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dialog"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="96dp" />
+
+        <EditText
+            android:id="@+id/Address1Street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Street"
+            android:inputType="textPersonName"
+
+            />
+
+        <EditText
+            android:id="@+id/Address1City"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="City"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/Address1State"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:ems="10"
+
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="State"
+            android:inputType="textPersonName"
+            android:text="CA" />
+
+        <EditText
+            android:id="@+id/Address1Zip"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Zip Code"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+
+        <Spinner
+            android:id="@+id/address_spinner2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dialog"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="96dp" />
+
+        <EditText
+            android:id="@+id/Address2Street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Street"
+            android:inputType="textPersonName"
+
+            />
+
+        <EditText
+            android:id="@+id/Address2City"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="City"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/Address2State"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:ems="10"
+
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="State"
+            android:inputType="textPersonName"
+            android:text="CA" />
+
+        <EditText
+            android:id="@+id/Address2Zip"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Zip Code"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <ToggleButton
+            android:id="@+id/toggleButton5"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textAllCaps="false"
+            android:textOff="client"
+            android:textOn="client" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton6"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textAllCaps="false"
+            android:textOff="caregiver (Ana Maria)"
+            android:textOn="caregiver (Ana Maria)" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:text="+Add Family Member" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ToggleButton
+            android:id="@+id/toggleButton7"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textAllCaps="false"
+            android:textOff="facilitator"
+            android:textOn="facilitator" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton8"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textAllCaps="false"
+            android:textOff="therapist"
+            android:textOn="therapist" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton9"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:text="ToggleButton"
+            android:textOff="CFS"
+            android:textOn="CFS" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton10"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textAllCaps="false"
+            android:textOff="parent partner"
+            android:textOn="parent partner" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textAllCaps="false"
+            android:textOff="social worker (Marie)"
+            android:textOn="social worker (Marie)" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton2"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ToggleButton"
+            android:textAllCaps="false"
+            android:textOff="teacher (Ms. Kelley)"
+            android:textOn="teacher (Ms. Kelley)" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+Add Case Staff"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

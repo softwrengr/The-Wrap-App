@@ -1,0 +1,32 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="false"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="androidlab.com.recaptube.Fragments.FinalSummaryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="900dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:src="@drawable/newsfeed1" />
+        <!--
+            <ImageView
+                android:layout_width="900dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/newsfeed2" />
+        -->
+        </LinearLayout>
+
+    </ScrollView>

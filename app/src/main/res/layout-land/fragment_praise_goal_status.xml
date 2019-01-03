@@ -1,0 +1,39 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5sp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/achievingagoal"
+                android:text="achieving a goal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/makingprogressonagoal"
+                android:text="making progress on a goal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/puttingeffortonagoal"
+                android:text="putting effort on a goal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

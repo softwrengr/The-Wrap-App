@@ -1,0 +1,188 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee"
+    tools:context="androidlab.com.recaptube.Fragments.FinalSummaryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="            Start and End"
+                android:fontFamily="monospace"
+                android:id="@+id/tvStartandEnd"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvStartDate"
+                android:text="Start date"
+                android:fontFamily="monospace"
+                android:textColor="#000"
+                android:layout_marginLeft="120dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEndDate"
+                android:text="End date"
+                android:fontFamily="monospace"
+                android:textColor="#000"
+                android:layout_marginLeft="70dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/tvOtherCodes"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/TextNotificationRow"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Text message reminders: Client"
+                android:padding="10dp"
+                android:id="@+id/tvNotifyClient"/>
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="2 Days" />
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"/>
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="1 Day" />
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"/>
+
+            <Switch
+                android:id="@+id/switch3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="6 Hours" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tmsgs"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Text message reminders: Caregiver"
+                android:padding="10dp"
+                android:id="@+id/tvNotifyCaregiver"/>
+
+
+            <Switch
+                android:id="@+id/switch4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="2 Days" />
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"/>
+
+            <Switch
+                android:id="@+id/switch5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="1 Day" />
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"/>
+
+            <Switch
+                android:id="@+id/switch6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="6 Hours" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/progressNoteEditText"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="top"
+            android:layout_marginBottom="70dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSubmit"
+            android:visibility="gone"
+            android:text="Submit"
+            android:textColor="#fff"
+            android:background="#FF4081"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="bottom|center"/>
+
+    </LinearLayout>
+
+</ScrollView>

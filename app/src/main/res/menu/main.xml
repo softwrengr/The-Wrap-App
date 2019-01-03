@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/profile"
+        android:title="My Profile"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/todolist"
+        android:title="To Do List"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/scheduled"
+        android:layout_width="wrap_content"
+        android:title="Scheduled Notifications"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/mileage"
+        android:title="Mileage"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/addClient"
+        android:title="Add Client"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/searchClient"
+        android:title="Search Client"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/glossary"
+        android:title="Glossary"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/resources"
+        android:title="Resources"
+        app:showAsAction="never" />
+</menu>

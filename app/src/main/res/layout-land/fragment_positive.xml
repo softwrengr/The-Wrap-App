@@ -1,0 +1,204 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee"
+    tools:context="androidlab.com.recaptube.Fragments.Fragment2k3eTabs.PositiveFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5sp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/agreed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="agreed"/>
+
+                <Button
+                    android:id="@+id/appearedinterested"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="appeared interested"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/engaged2K3e"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="engaged"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/complied"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="complied"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/contributedtotheconversation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="contributed to the conversation"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/displayedproblemsolvingskills"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="displayed problem solving skills"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/madeconsciencedecisions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="made conscience decisions"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/madepositivestatements"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="made positive statements"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/modifiedtheirbehavior"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="modified their behavior"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/respondedappropriately"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="responded appropriately"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/smiled"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="smiled"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/usedactivelisteningskills"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="used active listening skills"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/wasassertive"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="was assertive"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/wasempathetic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="was empathetic"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/washopeful"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="was hopeful"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/wasinsightful"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="was insightful"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+
+                <Button
+                    android:id="@+id/wasreceptive"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="was receptive"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"/>
+                <Button
+                    android:id="@+id/dummy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

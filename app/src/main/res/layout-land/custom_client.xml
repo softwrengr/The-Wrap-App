@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#eee"
+    android:id="@+id/linearLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:id="@+id/contestentImage"
+        android:src="@mipmap/client"
+        />
+    <!--<de.hdodenhof.circleimageview.v-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/contestentImage1"-->
+        <!--android:src="@drawable/client2"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adam Noor"
+        android:layout_marginTop="10sp"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:id="@+id/clientName"
+        android:textSize="15dp"
+        tools:ignore="RtlCompat" />
+</LinearLayout>

@@ -1,0 +1,152 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee"
+    tools:context="androidlab.com.recaptube.Fragments.PlanFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/tvForDateLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvForDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="When is the next meeting?"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    android:textSize="24dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="100dp"
+                    android:text="Date and Time"
+                    android:textSize="15dp"
+                    android:textColor="#000">
+                </TextView>
+
+
+                <Spinner
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginLeft="10dp"
+                    android:entries="@array/sessionType"
+                    android:id="@+id/spinnerSessionType">
+                </Spinner>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/textPreviewForGoalsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textPreviewForGoals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="The client will focus on which goal?"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    android:textSize="24dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinnerGoals"
+                    android:visibility="gone"
+                    android:layout_marginLeft="10dp"
+                    ></Spinner>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tvUserGoalLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvUserGoal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="The CFS will assist the client with which goal?"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    android:textSize="24dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="15dp"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"/>
+            </LinearLayout>
+
+
+
+
+
+            <Spinner
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerUserGoal"
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"></Spinner>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

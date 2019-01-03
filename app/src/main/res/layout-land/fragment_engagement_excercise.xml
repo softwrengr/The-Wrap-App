@@ -1,0 +1,65 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5sp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/aguidedimageryexercise"
+                android:text="a guided imagery exercise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/ameditationexercise"
+                android:text="a meditation exercise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/arelaxationexercise"
+                android:text="a relaxation exercise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/adeepbreathingexercise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:text="a deep breathing exercise"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

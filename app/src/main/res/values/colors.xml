@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#566BB6</color>
+    <color name="colorPrimaryDark">#566BB6</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorControlActivated">#42221f</color>
+    <color name="colorSwitchThumbNormal">#42221f</color>
+    <color name="colorForeground">#42221f</color>
+
+    <color name="black_overlay">#66000000</color>
+</resources>

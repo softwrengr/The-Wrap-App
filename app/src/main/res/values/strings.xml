@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">The Wrap App</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_fullscreen">Dashboard</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="com.google.android.geo.API_KEY">AIzaSyCbuAooOEnFlWE3JFINgbktSq3Qw9PA8R4</string>
+
+    <string name="title_activity_image_full_screen">ImageFullScreenActivity</string>
+</resources>

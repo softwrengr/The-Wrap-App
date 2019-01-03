@@ -1,0 +1,179 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eee"
+    tools:context="androidlab.com.recaptube.Fragments.Fragment2k3eTabs.NegativeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <Button
+                android:id="@+id/didntrespond"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:text="didn't respond"/>
+
+            <Button
+                android:id="@+id/disagreed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="disagreed"
+                android:textAllCaps="false"
+                android:layout_toRightOf="@+id/didntrespond"/>
+
+            <Button
+                android:id="@+id/madelittleeyecontact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="made little eye contact"
+                android:textAllCaps="false"
+                android:layout_toRightOf="@+id/disagreed"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/providedlimitedresponse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="provided limited response"
+                android:textAllCaps="false"
+                android:layout_below="@+id/didntrespond"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/respondedinappropriately"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="responded inappropriately"
+                android:textAllCaps="false"
+                android:layout_toRightOf="@+id/providedlimitedresponse"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/refused"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="refused"
+                android:textAllCaps="false"
+                android:layout_toRightOf="@+id/respondedinappropriately"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/unsuccessfullyengaged"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="unsuccessfully engaged"
+                android:textAllCaps="false"
+                android:layout_below="@+id/providedlimitedresponse"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/wasguarded"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="was guarded"
+                android:textAllCaps="false"
+                android:layout_toRightOf="@+id/unsuccessfullyengaged"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/washostile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="was hostile"
+                android:textAllCaps="false"
+                android:layout_toRightOf="@+id/wasguarded"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/wasnonreceptive"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="was non-receptive"
+                android:textAllCaps="false"
+                android:layout_below="@+id/unsuccessfullyengaged"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/wasreserved"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="was reserved"
+                android:textAllCaps="false"
+                android:layout_toRightOf="@+id/wasnonreceptive"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/wasuninterested"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="was uninterested"
+                android:textAllCaps="false"
+                android:layout_toRightOf="@+id/wasreserved"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/waswithdrawn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="was withdrawn"
+                android:textAllCaps="false"
+                android:layout_below="@+id/wasnonreceptive"
+                android:layout_marginTop="10dp"/>
+            <Button
+                android:id="@+id/dummy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+            <Button
+                android:id="@+id/dummy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

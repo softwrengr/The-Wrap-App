@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#eee"
+    tools:context="androidlab.com.recaptube.Fragments.ClientsFragment">
+
+    <GridView
+        android:id="@+id/gridViewAllContestent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="90dp"
+        android:padding="10sp"
+        android:horizontalSpacing="15dp"
+        android:numColumns="4"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="25dp"
+        ></GridView>
+
+</LinearLayout>

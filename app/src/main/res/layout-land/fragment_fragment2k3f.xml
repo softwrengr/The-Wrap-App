@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    android:orientation="vertical"
+    tools:context="androidlab.com.recaptube.Fragments.Fragment2k3f">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="Intervention"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+            android:text="Final String"
+            android:id="@+id/FinalString"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Response"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:textSize="24dp"/>
+        <TextView
+            android:id="@+id/FinalResponse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:text="Response"/>
+    </LinearLayout>
+
+</LinearLayout>

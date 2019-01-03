@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Behavior"
+    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+    android:textColor="#fff"/>
+    <Button
+        android:id="@+id/btnPlan"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="wrap_content"
+        android:layout_height="34sp"
+        android:drawablePadding="5sp"
+        android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
+        android:drawableTint="#fff"
+        android:paddingLeft="15sp"
+        android:paddingRight="7dp"
+        android:text="Plan"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:layout_marginRight="20sp"
+        android:textSize="18sp" />
+</RelativeLayout>

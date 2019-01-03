@@ -1,0 +1,35 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    tools:context="androidlab.com.recaptube.Fragments.DiscussionTabs.DiscussionDetailsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/details"
+            android:text="details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/detailsfromthelastsession"
+            android:text="details from the last session"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</FrameLayout>
