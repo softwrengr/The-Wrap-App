@@ -42,6 +42,7 @@ import androidlab.com.recaptube.Controllers.ClientsDetailsModel;
 import androidlab.com.recaptube.Fragments.ClientsFragment;
 import androidlab.com.recaptube.Fragments.TaskGridFragment;
 import androidlab.com.recaptube.R;
+import androidlab.com.recaptube.Utils.Configuration;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -251,14 +252,12 @@ public class ClientAdapter extends BaseAdapter {
 
     }
     private void DeleteRecipe(){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,"http://trendingfashionable.ipage.com/Recaptube/delete_client.php?id="+clientId
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Configuration.DELETE_CLIENTS+clientId
                 , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("res", response);
                 Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
-             //   Fragment fragment=new ClientsFragment();
-             //   ((AppCompatActivity) context).getFragmentManager().beginTransaction().replace(R.id.mainContainer, fragment).commit();
 
                 Fragment fragment=new ClientsFragment();
                 ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.mainContainer, fragment).commit();
@@ -268,7 +267,6 @@ public class ClientAdapter extends BaseAdapter {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // progressBar.setVisibility(View.INVISIBLE);
                 Log.d("error", String.valueOf(error.getCause()));
 
             }

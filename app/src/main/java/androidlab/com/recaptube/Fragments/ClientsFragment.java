@@ -51,6 +51,7 @@ import androidlab.com.recaptube.Adapter.ClientAdapter;
 import androidlab.com.recaptube.Controllers.ClientsDetailsModel;
 import androidlab.com.recaptube.R;
 import androidlab.com.recaptube.Utils.Alert_Utils;
+import androidlab.com.recaptube.Utils.Configuration;
 
 
 public class ClientsFragment extends Fragment {
@@ -202,20 +203,16 @@ public class ClientsFragment extends Fragment {
 
             for (File file : files) {
 
-                // delete returns boolean we can use
                 if (!file.delete()) {
                     return false;
                 }
             }
 
-            // if for completes all
             return true;
 
         } catch (Exception e) {
         }
 
-        // http://trendingfashionable.ipage.com/Recaptube/client_info.php
-        //http://squaresdevelopers.com/RecapTube/client_info.php
         return false;
     }
 
@@ -285,7 +282,7 @@ public class ClientsFragment extends Fragment {
     }
 
     private void apicall() {
-        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, "http://trendingfashionable.ipage.com/Recaptube/client_info.php"
+        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, Configuration.ALL_CLIENTS
                 , new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

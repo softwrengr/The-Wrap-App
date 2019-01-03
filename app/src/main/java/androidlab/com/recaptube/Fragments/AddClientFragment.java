@@ -36,6 +36,7 @@ import java.util.Map;
 
 import androidlab.com.recaptube.R;
 import androidlab.com.recaptube.Utils.Alert_Utils;
+import androidlab.com.recaptube.Utils.Configuration;
 
 public class AddClientFragment extends Fragment {
 
@@ -334,10 +335,9 @@ public class AddClientFragment extends Fragment {
         }
 
     }
-   // http://trendingfashionable.ipage.com/Recaptube/clients_detail.php
-    //http://squaresdevelopers.com/RecapTube/clients_detail.php
+
     private void apicall() {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://trendingfashionable.ipage.com/Recaptube/clients_detail.php"
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Configuration.ADD_CLIENTS
                 , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
