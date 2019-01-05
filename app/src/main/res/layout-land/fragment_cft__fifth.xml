@@ -1,0 +1,33 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="androidlab.com.recaptube.Fragments.CFT_Fragments.CFT_WorriesFragment">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="120dp"
+           android:layout_gravity="center"
+           android:text="Any worries?"
+           android:textSize="80dp" />
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+           <EditText
+               android:id="@+id/ClientWorries"
+               android:hint="Worries"
+               android:text=""
+               android:textSize="40dp"
+               android:layout_width="500dp"
+               android:layout_marginBottom="600dp"
+               android:layout_height="wrap_content"/>
+       </LinearLayout>
+
+   </LinearLayout>
+</ScrollView>

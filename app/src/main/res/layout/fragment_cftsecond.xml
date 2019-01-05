@@ -1,0 +1,124 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="androidlab.com.recaptube.Fragments.CFT_Fragments.CFTSecondFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Supervisor Name"
+                android:textSize="18dp"
+                android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/SupervisorName"
+                android:hint="Supervisor Name"
+                android:text="Candace McIntosh"
+                android:textSize="18dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Facilitator"
+                android:textSize="18dp"
+                android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/FacilitatorName"
+                android:hint="Facilitator Name"
+                android:text="Mariano Salcedo"
+                android:textSize="18dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="MHS"
+                android:textSize="18dp"
+                android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/TherapistName"
+                android:hint="Therapist Name"
+                android:text="Vanessa Ramirez"
+                android:textSize="18dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="CFS"
+                android:textSize="18dp"
+                android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/CFSName"
+                android:hint="CFSName"
+                android:text="Eric Ramos"
+                android:textSize="18dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Parent Partner"
+                android:textSize="18dp"
+                android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/ParentPartnerName"
+                android:hint="Parent Partner Name"
+                android:text="Karina Vargas"
+                android:textSize="18dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Caregiver Name"
+                android:textSize="18dp"
+                android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/CaregiverName"
+                android:hint="Caregiver Name"
+                android:text="Ana Maria"
+                android:textSize="18dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

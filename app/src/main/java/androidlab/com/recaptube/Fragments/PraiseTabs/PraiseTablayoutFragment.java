@@ -52,6 +52,7 @@ public class PraiseTablayoutFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText("CUSTOM"));
         viewPager.setAdapter(new PagerAdapter(((FragmentActivity) getActivity()).getSupportFragmentManager(), tabLayout.getTabCount()));
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         for(int i=0; i < tabLayout.getTabCount(); i++) {
             View tab = ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(i);

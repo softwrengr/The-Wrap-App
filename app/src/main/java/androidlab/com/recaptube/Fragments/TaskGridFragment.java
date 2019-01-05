@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidlab.com.recaptube.Fragments.CFT_Fragments.A_CFTMinutesFragment;
+import androidlab.com.recaptube.Fragments.CFT_Fragments.CFT_TabsFragment;
 import androidlab.com.recaptube.R;
 
 public class TaskGridFragment extends Fragment implements View.OnClickListener {
@@ -164,7 +164,7 @@ public class TaskGridFragment extends Fragment implements View.OnClickListener {
                 getFragmentManager().beginTransaction().replace(R.id.mainContainer, fragment3).addToBackStack("abc").commit();
                 break;
             case R.id.linearlayoutCFTMinutes:
-                Fragment A_CFTMinutes = new A_CFTMinutesFragment();
+                Fragment A_CFTMinutes = new CFT_TabsFragment();
                 getFragmentManager().beginTransaction().replace(R.id.mainContainer, A_CFTMinutes).addToBackStack("abc").commit();
                 break;
             case R.id.linearLayoutGenogram:

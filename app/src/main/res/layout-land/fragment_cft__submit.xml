@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="androidlab.com.recaptube.Fragments.CFT_Fragments.CFT_SubmitFragment">
+
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="120dp"
+               android:layout_gravity="center"
+               android:text="etc."
+               android:layout_centerHorizontal="true"
+               android:textSize="80dp" />
+
+           <Button
+               android:id="@+id/directedattentionEng"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textAllCaps="false"
+               android:textColor="#fff"
+               android:background="#FF4081"
+               android:layout_alignParentBottom="true"
+               android:layout_marginBottom="20sp"
+               android:text="Submit"/>
+
+
+       </RelativeLayout>
+

@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -30,46 +32,24 @@ import java.util.Calendar;
 import java.util.Date;
 
 import androidlab.com.recaptube.Fragments.ClientsFragment;
+import androidlab.com.recaptube.Utils.GeneralUtils;
 import androidlab.com.recaptube.Utils.ZipManager;
 import androidlab.com.recaptube.R;
 
 
-public class A_CFTMinutesFragment extends Fragment {
-
+public class CFT_MinutesFragment extends Fragment {
     private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
     SharedPreferences sharedPreferences;
-    Button directedAttentionEng;
-    EditText FacilitatorNameET, ETCFSName, ETCaregiverName, ETParentPartnerName;
-    EditText TherapistNameET;
-    EditText ETSupervisorName, ETNonNegotiables, ETClientWorries, ETClientRules, ETCaregiverGoal, ETClientGoal;
     TextView tvdatepicker, startTime, endTime;
     DatePickerDialog datePickerDialog;
     String strDate, aTime, startT, endT;
-    String finalOutputPath = Environment.getExternalStorageDirectory().getPath()+ "/CFT Minutes/";
-
-
     SharedPreferences.Editor editor;
 
-    String inputPath = Environment.getExternalStorageDirectory().getPath()+ "/inputDocx/";
-    String inputFile = "input.docx";
-    String outputPath = Environment.getExternalStorageDirectory().getPath()+ "/.tmpDocx/";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_a__cftminutes, container, false);
-        directedAttentionEng = (Button) view.findViewById(R.id.directedattentionEng);
-        FacilitatorNameET = (EditText) view.findViewById(R.id.FacilitatorName);
-        ETCaregiverName = (EditText) view.findViewById(R.id.CaregiverName);
-        ETCFSName = (EditText) view.findViewById(R.id.CFSName);
-        TherapistNameET = (EditText) view.findViewById(R.id.TherapistName);
-        ETParentPartnerName = (EditText) view.findViewById(R.id.ParentPartnerName);
-        ETSupervisorName = (EditText) view.findViewById(R.id.SupervisorName);
-        ETNonNegotiables = (EditText) view.findViewById(R.id.NonNegotiables);
-        ETClientWorries = (EditText) view.findViewById(R.id.ClientWorries);
-        ETClientRules = (EditText) view.findViewById(R.id.ClientRules);
-        ETCaregiverGoal = (EditText) view.findViewById(R.id.CaregiverGoal);
-        ETClientGoal = (EditText) view.findViewById(R.id.ClientGoal);
         startTime = (TextView) view.findViewById(R.id.startTime);
         endTime = (TextView) view.findViewById(R.id.endTime);
         tvdatepicker = (TextView) view.findViewById(R.id.tvdatepicker);
@@ -99,19 +79,7 @@ public class A_CFTMinutesFragment extends Fragment {
         } else {
             // Permission has already been granted
         }
-        directedAttentionEng.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean isDocCreated = docxCreation();
-                if (isDocCreated) {
-                    String fName = sharedPreferences.getString("fname","");
-                    String lName = sharedPreferences.getString("lname","");
-                    editor.putString("CFTClientName", fName + " " + lName).commit();
-                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.mainContainer, new ClientsFragment()).commit();
-                }
-            }
-        });
+
 
         //Date time picker
         tvdatepicker.setOnClickListener(new View.OnClickListener() {
@@ -140,6 +108,7 @@ public class A_CFTMinutesFragment extends Fragment {
                                 editor.putInt("Year", year).commit();
                                 editor.putString("CFTDate", strDate).commit();
                                 tvdatepicker.setText("Date : " + strDate);
+                                GeneralUtils.putStringValueInEditor(getActivity(),"cft_date",strDate);
 
 
                             }
@@ -197,6 +166,7 @@ public class A_CFTMinutesFragment extends Fragment {
                                 startTime.setText("Start Time : " + aTime);
                                 startT = aTime;
                                 editor.putString("startTime", aTime).commit();
+
                             }
                         }, hour, minute, false);
                 timePickerDialog.show();
@@ -245,103 +215,13 @@ public class A_CFTMinutesFragment extends Fragment {
                                 endTime.setText("End Time : " + aTime);
                                 endT = aTime;
                                 editor.putString("endTime", aTime).commit();
+
                             }
                         }, hour, minute, false);
                 timePickerDialog.show();
             }
         });
         return view;
-    }
-    public boolean docxCreation() {
-        String FacilitatorName = FacilitatorNameET.getText().toString();
-        String CaregiverName = ETCaregiverName.getText().toString();
-        String CFSName = ETCFSName.getText().toString();
-        String TherapistName = TherapistNameET.getText().toString();
-        String ParentPartnerName = ETParentPartnerName.getText().toString();
-        String SupervisorName = ETSupervisorName.getText().toString();
-        String NonNegotiables = ETNonNegotiables.getText().toString();
-        String ClientWorries = ETClientWorries.getText().toString();
-        String ClientRules = ETClientRules.getText().toString();
-        String CaregiverGoal = ETCaregiverGoal.getText().toString();
-        String ClientGoal = ETClientGoal.getText().toString();
-        Log.i("SJA", "ClientRules: " + ClientRules);
-        Log.i("SJA", "CaregiverGoal: " + CaregiverGoal);
-        String Fname = sharedPreferences.getString("fname","");
-        String Lname = sharedPreferences.getString("lname","");
-
-        String startTime = sharedPreferences.getString("startTime","");
-        String endTime = sharedPreferences.getString("endTime","");
-        String dateval = sharedPreferences.getString("CFTDate","");
-        DateFormat dateFormat = new SimpleDateFormat("MMMM_dd");
-        Date date = new Date();
-        File finalOutputPathDir = new File(finalOutputPath);
-        if (!finalOutputPathDir.exists()) {
-            finalOutputPathDir.mkdirs();
-        }
-        String OUTPUT_ZIP_FILE = dateFormat.format(date) + "_" + Fname + "_" + Lname + ".docx";
-        if (TherapistName.matches("")) {
-            Toast.makeText(getActivity(), "Please Enter Therapist Name to replace", Toast.LENGTH_LONG).show();
-        }
-        else if (CaregiverName.matches("")) {
-            Toast.makeText(getActivity(), "Please Select Caregiver Name", Toast.LENGTH_LONG).show();
-        }
-        else if (CFSName.matches("")) {
-            Toast.makeText(getActivity(), "Please Select CFS Name", Toast.LENGTH_LONG).show();
-        }
-        else if (CaregiverName.matches("")) {
-            Toast.makeText(getActivity(), "Please Select Caregiver Name", Toast.LENGTH_LONG).show();
-        }
-        else if (FacilitatorName.matches("")) {
-            Toast.makeText(getActivity(), "Please Select Facilitator Name", Toast.LENGTH_LONG).show();
-        }
-        else if (ParentPartnerName.matches("")) {
-            Toast.makeText(getActivity(), "Please Select Parent Partner Name", Toast.LENGTH_LONG).show();
-        }
-        else if (SupervisorName.matches("")) {
-            Toast.makeText(getActivity(), "Please Select Supervisor Name", Toast.LENGTH_LONG).show();
-        }
-        else if (NonNegotiables.matches("")) {
-            Toast.makeText(getActivity(), "Please Select value of Non Negotiables", Toast.LENGTH_LONG).show();
-        }
-        else if (ClientWorries.matches("")) {
-            Toast.makeText(getActivity(), "Please Select value of Client Worries", Toast.LENGTH_LONG).show();
-        }
-        else if (ClientRules.matches("")) {
-            Toast.makeText(getActivity(), "Please Select value of Client Rules", Toast.LENGTH_LONG).show();
-        }
-        else if (CaregiverGoal.matches("")) {
-            Toast.makeText(getActivity(), "Please Select value of Caregiver Goal", Toast.LENGTH_LONG).show();
-        }
-        else if (ClientGoal.matches("")) {
-            Toast.makeText(getActivity(), "Please Select value of Client Goal", Toast.LENGTH_LONG).show();
-        }
-        else if (strDate == null || strDate.matches("")) {
-            Toast.makeText(getActivity(), "Please Select Date", Toast.LENGTH_LONG).show();
-        }
-        else if (startT == null || startT.matches("")) {
-            Toast.makeText(getActivity(), "Please Select Start Time", Toast.LENGTH_LONG).show();
-        }
-        else if (endT == null || endT.matches("")) {
-            Toast.makeText(getActivity(), "Please Select End Time", Toast.LENGTH_LONG).show();
-        }
-        else {
-            ZipManager zipManager = new ZipManager();
-            //Extract Data to a folder
-            boolean successUnzip = zipManager.extractZip(inputPath + inputFile, outputPath, false);
-            // Re-generate docx
-            zipManager.generateFileList(new File(outputPath));
-            boolean successZip = zipManager.zipIt(finalOutputPath + OUTPUT_ZIP_FILE, Fname, CaregiverName, TherapistName, ParentPartnerName, FacilitatorName, CFSName, SupervisorName, NonNegotiables, ClientWorries, ClientRules, CaregiverGoal, ClientGoal, dateval, startTime, endTime, "", "", Lname, "CFTMIN", null);
-            if (successUnzip && successZip) {
-                Log.i("SJA", "Yoo... Docx Successfully Created!!");
-                return true;
-//                Toast.makeText(getActivity(), "Yoo...Successfully Done!!", Toast.LENGTH_LONG).show();
-            }
-            else {
-                Toast.makeText(getActivity(), "Oops..Faild!! Either file or folder not found!", Toast.LENGTH_LONG).show();
-            }
-            //FacilitatorNameET.setText("");
-        }
-        return false;
     }
 
 }

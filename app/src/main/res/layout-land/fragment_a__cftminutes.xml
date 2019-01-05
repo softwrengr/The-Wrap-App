@@ -6,6 +6,7 @@
     android:layout_marginRight="10dp"
     android:orientation="vertical"
     android:background="#eee"
+    android:id="@+id/scroll_view"
     tools:context="androidlab.com.recaptube.Fragments.MainTabs.EngagementFragment">
 
 
@@ -16,9 +17,13 @@
     android:orientation="vertical"
     android:background="#eee">
 
-    <ScrollView
+
+    <LinearLayout
+        android:id="@+id/layout_one"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,11 +38,7 @@
                 android:textColor="#000">
             </TextView>
         </LinearLayout>
-    </ScrollView>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,13 +53,8 @@
                 android:textColor="#000">
             </TextView>
         </LinearLayout>
-    </ScrollView>
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_marginBottom="60dp"
-        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,261 +70,283 @@
                 android:textColor="#000">
             </TextView>
         </LinearLayout>
-    </ScrollView>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Supervisor Name"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/SupervisorName"
-            android:hint="Supervisor Name"
-            android:text="Candace McIntosh"
-            android:textSize="18dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Facilitator"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/FacilitatorName"
-            android:hint="Facilitator Name"
-            android:text="Mariano Salcedo"
-            android:textSize="18dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="MHS"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/TherapistName"
-            android:hint="Therapist Name"
-            android:text="Vanessa Ramirez"
-            android:textSize="18dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="CFS"
-        android:textSize="18dp"
-        android:layout_gravity="center"/>
-    <EditText
-        android:id="@+id/CFSName"
-        android:hint="CFSName"
-        android:text="Eric Ramos"
-        android:textSize="18dp"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Parent Partner"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/ParentPartnerName"
-            android:hint="Parent Partner Name"
-            android:text="Karina Vargas"
-            android:textSize="18dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Caregiver Name"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/CaregiverName"
-            android:hint="Caregiver Name"
-            android:text="Ana Maria"
-            android:textSize="18dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Client Goal"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/ClientGoal"
-            android:hint="Client Goal"
-            android:text="To stop hitting my friends."
-            android:textSize="18dp"
-            android:layout_width="500dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layout_two"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Supervisor Name"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/SupervisorName"-->
+                <!--android:hint="Supervisor Name"-->
+                <!--android:text="Candace McIntosh"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Facilitator"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/FacilitatorName"-->
+                <!--android:hint="Facilitator Name"-->
+                <!--android:text="Mariano Salcedo"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="MHS"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/TherapistName"-->
+                <!--android:hint="Therapist Name"-->
+                <!--android:text="Vanessa Ramirez"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="CFS"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/CFSName"-->
+                <!--android:hint="CFSName"-->
+                <!--android:text="Eric Ramos"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Parent Partner"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/ParentPartnerName"-->
+                <!--android:hint="Parent Partner Name"-->
+                <!--android:text="Karina Vargas"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Caregiver Goal"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/CaregiverGoal"
-            android:hint="Caregiver Goal"
-            android:text="For the whole family to get along."
-            android:textSize="18dp"
-            android:layout_width="500dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="60dp"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Caregiver Name"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/CaregiverName"-->
+                <!--android:hint="Caregiver Name"-->
+                <!--android:text="Ana Maria"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Non Negotiables"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/NonNegotiables"
-            android:hint="Non Negotiables"
-            android:text="Court Mandates\nAttend CFT meetings"
-            android:textSize="18dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="600dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Client Rules"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/ClientRules"
-            android:hint="Client Rules"
-            android:text="No blaming\nNo shaming\nSpeak in turns"
-            android:textSize="18dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+    <!--</LinearLayout>-->
+
+    <!--end layout two-->
 
 
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layout_three"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Client Goal"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/ClientGoal"-->
+                <!--android:hint="Client Goal"-->
+                <!--android:text="To stop hitting my friends."-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="500dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Caregiver Goal"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/CaregiverGoal"-->
+                <!--android:hint="Caregiver Goal"-->
+                <!--android:text="For the whole family to get along."-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="500dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Non Negotiables"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/NonNegotiables"-->
+                <!--android:hint="Non Negotiables"-->
+                <!--android:text="Court Mandates\nAttend CFT meetings"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="600dp"-->
+            <!--android:orientation="horizontal">-->
+            <!--<TextView-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Client Rules"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<EditText-->
+                <!--android:id="@+id/ClientRules"-->
+                <!--android:hint="Client Rules"-->
+                <!--android:text="No blaming\nNo shaming\nSpeak in turns"-->
+                <!--android:textSize="18dp"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <!--&lt;!&ndash; layout three &ndash;&gt;-->
 
 
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="120dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="What's Working?"-->
+            <!--android:textSize="80dp" />-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+            <!--<EditText-->
+                <!--android:hint="What's Working?"-->
+                <!--android:text=""-->
+                <!--android:textSize="40dp"-->
+                <!--android:layout_width="500dp"-->
+                <!--android:layout_marginBottom="600dp"-->
+                <!--android:layout_height="wrap_content"/>-->
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+    <!--&lt;!&ndash; layout four &ndash;&gt;-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="120dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:text="Any worries?"-->
+        <!--android:textSize="80dp" />-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+        <!--<EditText-->
+            <!--android:id="@+id/ClientWorries"-->
+            <!--android:hint="Worries"-->
+            <!--android:text=""-->
+            <!--android:textSize="40dp"-->
+            <!--android:layout_width="500dp"-->
+            <!--android:layout_marginBottom="600dp"-->
+            <!--android:layout_height="wrap_content"/>-->
+    <!--</LinearLayout>-->
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:text="What's Working?"
-        android:textSize="80dp" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <EditText
-            android:hint="What's Working?"
-            android:text=""
-            android:textSize="40dp"
-            android:layout_width="500dp"
-            android:layout_marginBottom="600dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="120dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:text="etc."-->
+        <!--android:layout_marginBottom="600dp"-->
+        <!--android:textSize="80dp" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:text="Any worries?"
-        android:textSize="80dp" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <EditText
-            android:id="@+id/ClientWorries"
-            android:hint="Worries"
-            android:text=""
-            android:textSize="40dp"
-            android:layout_width="500dp"
-            android:layout_marginBottom="600dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:text="etc."
-        android:layout_marginBottom="600dp"
-        android:textSize="80dp" />
-
-    <Button
-        android:id="@+id/directedattentionEng"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:textColor="#fff"
-        android:background="#FF4081"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="bottom|center"
-        android:text="Submit"/>
+    <!--<Button-->
+        <!--android:id="@+id/directedattentionEng"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textColor="#fff"-->
+        <!--android:background="#FF4081"-->
+        <!--android:layout_marginTop="20sp"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:layout_gravity="bottom|center"-->
+        <!--android:text="Submit"/>-->
 
 </LinearLayout>
 </ScrollView>
