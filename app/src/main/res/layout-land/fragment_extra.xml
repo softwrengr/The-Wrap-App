@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEE"
+    android:orientation="vertical"
+    tools:context=".Fragments.ExtraFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="20sp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_circle"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:src="@drawable/biopic"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Date and Time"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/iv_circle"
+            android:layout_marginLeft="20sp"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:typeface="sans"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minutes"
+        android:textStyle="normal"
+        android:textColor="@color/black"
+        android:typeface="sans"
+        android:textSize="19sp"
+        android:layout_marginTop="10sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/please"
+            android:textStyle="normal"
+            android:textColor="@color/black_overlay"
+            android:typeface="sans"
+            android:textSize="16sp"
+            android:layout_marginTop="5dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_overlay"
+            android:layout_marginTop="20sp"/>
+
+      <HorizontalScrollView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Times are in"
+                  android:textStyle="normal"
+                  android:textColor="@color/black_overlay"
+                  android:typeface="sans"
+                  android:textSize="17sp"
+                  android:layout_marginTop="10sp"/>
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/times"
+                  android:textStyle="normal"
+                  android:textColor="@color/sky"
+                  android:typeface="sans"
+                  android:textSize="17sp"
+                  android:layout_marginLeft="10sp"
+                  android:layout_marginTop="10sp"/>
+
+
+              <ImageView
+                  android:layout_width="20sp"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/angle_down"
+                  android:layout_marginTop="5sp"
+                  android:layout_marginLeft="30sp"
+                  android:layout_gravity="center"/>
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Current Time: 5:05 PM"
+                  android:textStyle="normal"
+                  android:textColor="@color/black_overlay"
+                  android:typeface="sans"
+                  android:textSize="17sp"
+                  android:layout_marginLeft="10sp"
+                  android:layout_marginTop="10sp"/>
+
+
+
+              <ImageView
+                  android:layout_width="20sp"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/less"
+                  android:layout_marginTop="5sp"
+                  android:layout_marginLeft="30sp"
+                  android:layout_gravity="center"/>
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="July 31 - Aug 1 2015"
+                  android:textStyle="normal"
+                  android:textColor="@color/sky"
+                  android:typeface="sans"
+                  android:textSize="17sp"
+                  android:layout_marginLeft="10sp"
+                  android:layout_marginTop="10sp"/>
+
+
+              <ImageView
+                  android:layout_width="20sp"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/greater"
+                  android:layout_marginTop="5sp"
+                  android:layout_marginLeft="30sp"
+                  android:layout_gravity="center"/>
+
+
+
+          </LinearLayout>
+
+
+      </HorizontalScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_overlay"
+            android:layout_marginTop="20sp"/>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="260sp">
+
+
+
+    <LinearLayout
+        android:layout_width="60sp"
+        android:layout_height="70sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:textSize="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jul 31"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/left_second_layout"
+        android:layout_below="@id/top_line"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/circle"
+        android:layout_marginTop="10sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:textSize="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jul 31"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_below="@id/left_second_layout"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/circle"
+        android:layout_marginTop="10sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:textSize="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jul 31"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/left_line"
+        android:layout_width="1sp"
+        android:layout_height="match_parent"
+        android:background="@color/black_overlay"
+        android:layout_marginLeft="90sp"
+        android:layout_marginTop="20sp"/>
+
+
+        <LinearLayout
+            android:id="@+id/first_date_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_toRightOf="@id/left_line"
+            android:layout_toLeftOf="@id/right_line"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="60sp"
+                android:layout_height="70sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="60sp"
+                android:layout_height="70sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="60sp"
+                android:layout_height="70sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="60sp"
+                android:layout_height="70sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="60sp"
+                android:layout_height="70sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/top_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_overlay"
+            android:layout_marginTop="80sp"/>
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/second_date_row"
+            android:layout_toRightOf="@id/left_line"
+            android:layout_toLeftOf="@id/right_line"
+            android:layout_below="@id/top_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_below="@id/second_date_row"
+            android:layout_toRightOf="@id/left_line"
+            android:layout_toLeftOf="@id/right_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="5sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:gravity="center"
+                android:background="@drawable/circle"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="5sp"
+                android:layout_marginLeft="40sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fri"
+                    android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="jul 31"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <View
+            android:id="@+id/right_line"
+            android:layout_width="1sp"
+            android:layout_height="match_parent"
+            android:background="@color/black_overlay"
+            android:layout_gravity="right"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80sp"
+            android:layout_marginTop="20sp"/>
+
+
+    <LinearLayout
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="10sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:textSize="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jul 31"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/second_right_layout"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/top_line"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/circle"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="10sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:textSize="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jul 31"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/second_right_layout"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/circle"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="10sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:textSize="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jul 31"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

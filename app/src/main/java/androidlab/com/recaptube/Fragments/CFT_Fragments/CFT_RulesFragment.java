@@ -29,6 +29,8 @@ public class CFT_RulesFragment extends Fragment {
     }
 
     private void initUI(){
+        String ClientRules = ETClientRules.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"ClientRules",ClientRules);
 
         ETClientRules.addTextChangedListener(new TextWatcher() {
             @Override

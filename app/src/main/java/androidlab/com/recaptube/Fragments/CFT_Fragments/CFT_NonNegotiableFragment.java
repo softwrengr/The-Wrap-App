@@ -29,6 +29,8 @@ public class CFT_NonNegotiableFragment extends Fragment {
     }
 
     private void initUI(){
+        String NonNegotiables = ETNonNegotiables.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"NonNegotiables",NonNegotiables);
 
         ETNonNegotiables.addTextChangedListener(new TextWatcher() {
             @Override

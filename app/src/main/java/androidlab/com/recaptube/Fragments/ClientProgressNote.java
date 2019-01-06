@@ -2648,7 +2648,7 @@ public class ClientProgressNote extends Fragment implements View.OnClickListener
         toggleButtonClient.setOnClickListener(this);
         buttonAddPerson.setOnClickListener(this);
 
-
+        spinnerAddress1.performClick();
         spinnerAddress1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -2867,6 +2867,9 @@ public class ClientProgressNote extends Fragment implements View.OnClickListener
                 editor.putString("street", entryAddress1Street.getText().toString()).commit();
                 editor.putString("zip", entryAddress1Zip.getText().toString()).commit();
                 Log.d("address", address1);
+
+                showSecondSpinner();
+
             }
 
 
@@ -2876,145 +2879,6 @@ public class ClientProgressNote extends Fragment implements View.OnClickListener
             }
         });
 
-        spinnerAddress2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Object item = parent.getItemAtPosition(position);
-                if (item.equals(clientName + ": Home")) {
-                    // apicallHomeAddress();
-                    editor.putString("add2title", "Home").commit();
-                    homeStreet = sharedPreferences.getString("Hstreet", "");
-                    homeCity = sharedPreferences.getString("Hcity", "");
-                    homeZip = sharedPreferences.getString("Hzip", "");
-                    homeState = sharedPreferences.getString("HState", "");
-
-                    entryAddress2Street.setText(homeStreet);
-                    entryAddress2City.setText(homeCity);
-                    entryAddress2State.setText(homeState);
-                    entryAddress2Zip.setText(homeZip);
-
-                    textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to client's home" + " in " + entryAddress2City.getText() + " for ");
-
-                    linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
-                    entryAddress2City.setVisibility(View.VISIBLE);
-                    entryAddress2Street.setVisibility(View.VISIBLE);
-                    entryAddress2Zip.setVisibility(View.VISIBLE);
-                    entryAddress2State.setVisibility(View.VISIBLE);
-                    fab.setVisibility(View.VISIBLE);
-                } else if (item.equals(clientName + ": School")) {
-                    //apiSchoolAddressCall();
-                    editor.putString("add2title", "School").commit();
-                    schoolStreet = sharedPreferences.getString("Sstreet", "");
-                    schoolCity = sharedPreferences.getString("Scity", "");
-                    schoolState = sharedPreferences.getString("Sstate", "");
-                    schoolZip = sharedPreferences.getString("Szip", "");
-
-                    entryAddress2Street.setText(schoolStreet);
-                    entryAddress2City.setText(schoolCity);
-                    entryAddress2State.setText(schoolState);
-                    entryAddress2Zip.setText(schoolZip);
-
-                    textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to Foster Middle School" + " in " + entryAddress2City.getText() + " for ");
-
-                    linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
-                    fab.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
-                    entryAddress2City.setVisibility(View.VISIBLE);
-                    entryAddress2Street.setVisibility(View.VISIBLE);
-                    entryAddress2Zip.setVisibility(View.VISIBLE);
-                    entryAddress2State.setVisibility(View.VISIBLE);
-                } else if (item.equals("Custom")) {
-
-                    entryAddress2City.setText("");
-                    entryAddress2State.setText("");
-                    entryAddress2Street.setText("");
-                    entryAddress2Zip.setText("");
-                    linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
-                    fab.setVisibility(View.VISIBLE);
-                    entryAddress2City.setVisibility(View.VISIBLE);
-                    entryAddress2Street.setVisibility(View.VISIBLE);
-                    entryAddress2Zip.setVisibility(View.VISIBLE);
-                    entryAddress2State.setVisibility(View.VISIBLE);
-                    editor.putString("add2title", entryAddress2City.getText().toString()).commit();
-                } else if (item.equals("SPA 2: Reseda")) {
-                    editor.putString("add2title", "SPA 2: Reseda").commit();
-                    entryAddress2Street.setText("7601 Canby Ave, Suite 3");
-                    entryAddress2City.setText("Reseda");
-                    entryAddress2State.setText("CA");
-                    entryAddress2Zip.setText("91335");
-                    linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
-                    fab.setVisibility(View.VISIBLE);
-                    entryAddress2City.setVisibility(View.VISIBLE);
-                    entryAddress2Street.setVisibility(View.VISIBLE);
-                    entryAddress2Zip.setVisibility(View.VISIBLE);
-                    entryAddress2State.setVisibility(View.VISIBLE);
-
-//                    address2 = "7601 Canby Ave, Suite 3 "+"Reseda "+"CA "+"91335 ";
-//                    editor.putString("address2",address2).commit();
-
-                    textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to " + spinnerAddress2.getSelectedItem() + " in " + entryAddress2City.getText() + " for ");
-                } else if (item.equals("SPA 4: LA Metro")) {
-                    editor.putString("add2title", "SPA 4: LA Metro").commit();
-                    entryAddress2Street.setText("1625 W. Olympic Blvd");
-                    entryAddress2City.setText("Los Angeles");
-                    entryAddress2State.setText("CA");
-                    entryAddress2Zip.setText("90015");
-
-                    linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
-                    fab.setVisibility(View.VISIBLE);
-                    entryAddress2City.setVisibility(View.VISIBLE);
-                    entryAddress2Street.setVisibility(View.VISIBLE);
-                    entryAddress2Zip.setVisibility(View.VISIBLE);
-                    entryAddress2State.setVisibility(View.VISIBLE);
-
-//                    address2 = "1625 W. Olympic Blvd "+"Los Angeles "+"CA "+"90015";
-//                    editor.putString("address2",address2).commit();
-
-                    textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to " + spinnerAddress2.getSelectedItem() + " in " + entryAddress2City.getText() + " for ");
-                } else if (item.equals("SPA 6: Compton")) {
-                    editor.putString("add2title", "SPA 6: Compton").commit();
-                    entryAddress2Street.setText("1303 West Walnut Parkway");
-                    entryAddress2City.setText("Compton");
-                    entryAddress2State.setText("CA");
-                    entryAddress2Zip.setText("90220");
-
-                    linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
-                    linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
-                    fab.setVisibility(View.VISIBLE);
-                    entryAddress2City.setVisibility(View.VISIBLE);
-                    entryAddress2Street.setVisibility(View.VISIBLE);
-                    entryAddress2Zip.setVisibility(View.VISIBLE);
-                    entryAddress2State.setVisibility(View.VISIBLE);
-
-//                    address2 = "1303 West Walnut Parkway "+"Compton "+"CA "+"90220";
-//                    editor.putString("address2",address2).commit();
-
-                    textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to " + spinnerAddress2.getSelectedItem() + " in " + entryAddress2City.getText() + " for ");
-                }
-
-                address2 = entryAddress2Street.getText().toString() + entryAddress2City.getText().toString() + entryAddress2State.getText().toString() + " " + entryAddress2Zip.getText().toString();
-                editor.putString("address2", address2).commit();
-                editor.putString("street2", entryAddress2Street.getText().toString()).commit();
-                editor.putString("zip2", entryAddress2Zip.getText().toString());
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
         return view;
     }
@@ -3251,6 +3115,154 @@ public class ClientProgressNote extends Fragment implements View.OnClickListener
                 break;
         }
 
+    }
+
+
+    private void showSecondSpinner(){
+        if(spinnerAddress2.getVisibility()==View.VISIBLE){
+            spinnerAddress2.performClick();
+            spinnerAddress2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    Object item = parent.getItemAtPosition(position);
+                    if (item.equals(clientName + ": Home")) {
+                        editor.putString("add2title", "Home").commit();
+                        homeStreet = sharedPreferences.getString("Hstreet", "");
+                        homeCity = sharedPreferences.getString("Hcity", "");
+                        homeZip = sharedPreferences.getString("Hzip", "");
+                        homeState = sharedPreferences.getString("HState", "");
+
+                        entryAddress2Street.setText(homeStreet);
+                        entryAddress2City.setText(homeCity);
+                        entryAddress2State.setText(homeState);
+                        entryAddress2Zip.setText(homeZip);
+
+                        textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to client's home" + " in " + entryAddress2City.getText() + " for ");
+
+                        linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
+                        entryAddress2City.setVisibility(View.VISIBLE);
+                        entryAddress2Street.setVisibility(View.VISIBLE);
+                        entryAddress2Zip.setVisibility(View.VISIBLE);
+                        entryAddress2State.setVisibility(View.VISIBLE);
+                        fab.setVisibility(View.VISIBLE);
+                    } else if (item.equals(clientName + ": School")) {
+                        //apiSchoolAddressCall();
+                        editor.putString("add2title", "School").commit();
+                        schoolStreet = sharedPreferences.getString("Sstreet", "");
+                        schoolCity = sharedPreferences.getString("Scity", "");
+                        schoolState = sharedPreferences.getString("Sstate", "");
+                        schoolZip = sharedPreferences.getString("Szip", "");
+
+                        entryAddress2Street.setText(schoolStreet);
+                        entryAddress2City.setText(schoolCity);
+                        entryAddress2State.setText(schoolState);
+                        entryAddress2Zip.setText(schoolZip);
+
+                        textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to Foster Middle School" + " in " + entryAddress2City.getText() + " for ");
+
+                        linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
+                        fab.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
+                        entryAddress2City.setVisibility(View.VISIBLE);
+                        entryAddress2Street.setVisibility(View.VISIBLE);
+                        entryAddress2Zip.setVisibility(View.VISIBLE);
+                        entryAddress2State.setVisibility(View.VISIBLE);
+                    } else if (item.equals("Custom")) {
+
+                        entryAddress2City.setText("");
+                        entryAddress2State.setText("");
+                        entryAddress2Street.setText("");
+                        entryAddress2Zip.setText("");
+                        linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
+                        fab.setVisibility(View.VISIBLE);
+                        entryAddress2City.setVisibility(View.VISIBLE);
+                        entryAddress2Street.setVisibility(View.VISIBLE);
+                        entryAddress2Zip.setVisibility(View.VISIBLE);
+                        entryAddress2State.setVisibility(View.VISIBLE);
+                        editor.putString("add2title", entryAddress2City.getText().toString()).commit();
+                    } else if (item.equals("SPA 2: Reseda")) {
+                        editor.putString("add2title", "SPA 2: Reseda").commit();
+                        entryAddress2Street.setText("7601 Canby Ave, Suite 3");
+                        entryAddress2City.setText("Reseda");
+                        entryAddress2State.setText("CA");
+                        entryAddress2Zip.setText("91335");
+                        linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
+                        fab.setVisibility(View.VISIBLE);
+                        entryAddress2City.setVisibility(View.VISIBLE);
+                        entryAddress2Street.setVisibility(View.VISIBLE);
+                        entryAddress2Zip.setVisibility(View.VISIBLE);
+                        entryAddress2State.setVisibility(View.VISIBLE);
+
+//                    address2 = "7601 Canby Ave, Suite 3 "+"Reseda "+"CA "+"91335 ";
+//                    editor.putString("address2",address2).commit();
+
+                        textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to " + spinnerAddress2.getSelectedItem() + " in " + entryAddress2City.getText() + " for ");
+                    } else if (item.equals("SPA 4: LA Metro")) {
+                        editor.putString("add2title", "SPA 4: LA Metro").commit();
+                        entryAddress2Street.setText("1625 W. Olympic Blvd");
+                        entryAddress2City.setText("Los Angeles");
+                        entryAddress2State.setText("CA");
+                        entryAddress2Zip.setText("90015");
+
+                        linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
+                        fab.setVisibility(View.VISIBLE);
+                        entryAddress2City.setVisibility(View.VISIBLE);
+                        entryAddress2Street.setVisibility(View.VISIBLE);
+                        entryAddress2Zip.setVisibility(View.VISIBLE);
+                        entryAddress2State.setVisibility(View.VISIBLE);
+
+//                    address2 = "1625 W. Olympic Blvd "+"Los Angeles "+"CA "+"90015";
+//                    editor.putString("address2",address2).commit();
+
+                        textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to " + spinnerAddress2.getSelectedItem() + " in " + entryAddress2City.getText() + " for ");
+                    } else if (item.equals("SPA 6: Compton")) {
+                        editor.putString("add2title", "SPA 6: Compton").commit();
+                        entryAddress2Street.setText("1303 West Walnut Parkway");
+                        entryAddress2City.setText("Compton");
+                        entryAddress2State.setText("CA");
+                        entryAddress2Zip.setText("90220");
+
+                        linearLayoutPeoplePresentRow1.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentRow2.setVisibility(View.VISIBLE);
+                        linearLayoutPeoplePresentTeamRow.setVisibility(View.VISIBLE);
+                        fab.setVisibility(View.VISIBLE);
+                        entryAddress2City.setVisibility(View.VISIBLE);
+                        entryAddress2Street.setVisibility(View.VISIBLE);
+                        entryAddress2Zip.setVisibility(View.VISIBLE);
+                        entryAddress2State.setVisibility(View.VISIBLE);
+
+//                    address2 = "1303 West Walnut Parkway "+"Compton "+"CA "+"90220";
+//                    editor.putString("address2",address2).commit();
+
+                        textPreviewIntroduction.setText("The CFS traveled from " + entryAddress1City.getText() + " to " + spinnerAddress2.getSelectedItem() + " in " + entryAddress2City.getText() + " for ");
+                    }
+
+                    address2 = entryAddress2Street.getText().toString() + entryAddress2City.getText().toString() + entryAddress2State.getText().toString() + " " + entryAddress2Zip.getText().toString();
+                    editor.putString("address2", address2).commit();
+                    editor.putString("street2", entryAddress2Street.getText().toString()).commit();
+                    editor.putString("zip2", entryAddress2Zip.getText().toString());
+
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+        }
+        else {
+            Toast.makeText(getActivity(), "not showing", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

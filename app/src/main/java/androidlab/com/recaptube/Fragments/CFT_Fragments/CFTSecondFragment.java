@@ -38,6 +38,19 @@ public class CFTSecondFragment extends Fragment {
 
     private void initUI(){
 
+        String FacilitatorName = FacilitatorNameET.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"FacilitatorName",FacilitatorName);
+        String CFSName = ETCFSName.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"CFSName",CFSName);
+        String CaregiverName = ETCaregiverName.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"CaregiverName",CaregiverName);
+        String TherapistName = TherapistNameET.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"TherapistName",TherapistName);
+        String ParentPartnerName = ETParentPartnerName.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"ParentPartnerName",ParentPartnerName);
+        String SupervisorName = ETSupervisorName.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"SupervisorName",SupervisorName);
+
         FacilitatorNameET.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

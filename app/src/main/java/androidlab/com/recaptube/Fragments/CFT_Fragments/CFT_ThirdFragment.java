@@ -29,6 +29,10 @@ public class CFT_ThirdFragment extends Fragment {
     }
 
     private void initUI(){
+        String CaregiverGoal = ETCaregiverGoal.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"CaregiverGoal",CaregiverGoal);
+        String ClientGoal = ETClientGoal.getText().toString();
+        GeneralUtils.putStringValueInEditor(getActivity(),"ClientGoal",ClientGoal);
 
         ETCaregiverGoal.addTextChangedListener(new TextWatcher() {
             @Override

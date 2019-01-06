@@ -44,7 +44,7 @@ public class PlanFragment extends Fragment {
 
     String strDate;
     String text, goals, textGoal, strUserGoal;
-    TextView tvDate;
+    //TextView tvDate;
     DatePickerDialog datePickerDialog;
     String which = "for which type of meeting?";
     Spinner sessionTypeSpinner, goalSpinner, userGoalSPinner;
@@ -87,7 +87,7 @@ public class PlanFragment extends Fragment {
         tvPreviewGoals = (TextView) view.findViewById(R.id.textPreviewForGoals);
         tvPreviewGoalsLayout = (LinearLayout) view.findViewById(R.id.textPreviewForGoalsLayout);
 
-        tvDate = (TextView) view.findViewById(R.id.tvDate);
+       // tvDate = (TextView) view.findViewById(R.id.tvDate);
         sessionTypeSpinner = (Spinner) view.findViewById(R.id.spinnerSessionType);
         goalSpinner = (Spinner) view.findViewById(R.id.spinnerGoals);
         userGoalSPinner = (Spinner) view.findViewById(R.id.spinnerUserGoal);
@@ -97,87 +97,8 @@ public class PlanFragment extends Fragment {
         textPreviewForUserGoal = (TextView) view.findViewById(R.id.tvUserGoal);
         textPreviewForUserGoalLayout = (LinearLayout) view.findViewById(R.id.tvUserGoalLayout);
 
-        tvDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        showDatePicker();
 
-                final Calendar c1 = Calendar.getInstance();
-                int mYear = c1.get(Calendar.YEAR); // current year
-                int mMonth = c1.get(Calendar.MONTH); // current month
-                final int mDay = c1.get(Calendar.DAY_OF_MONTH);
-                // date picker dialog
-                final Calendar c = Calendar.getInstance();
-                int hour = c.get(Calendar.HOUR_OF_DAY);
-                int minute = c.get(Calendar.MINUTE);
-
-                datePickerDialog = new DatePickerDialog(getActivity(),
-                        new DatePickerDialog.OnDateSetListener() {
-
-                            @Override
-                            public void onDateSet(DatePicker view, int year,
-                                                  int monthOfYear, int dayOfMonth) {
-                                // set day of month , month and year value in the edit text
-                                strDate = (monthOfYear + 1) + "/" + dayOfMonth + "/" + year;
-                                editor.putInt("Month", monthOfYear + 1).commit();
-                                editor.putInt("Day", mDay).commit();
-                                editor.putInt("Year", year).commit();
-                                editor.putString("Date", strDate).commit();
-
-                            }
-                        }, mYear, mMonth, mDay);
-
-                TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
-                        new TimePickerDialog.OnTimeSetListener() {
-
-                            @Override
-                            public void onTimeSet(TimePicker view, int hourOfDay,
-                                                  int minute) {
-                                int hour = hourOfDay;
-                                int minutes = minute;
-                                String timeSet = "";
-                                if (hour > 12) {
-                                    hour -= 12;
-                                    timeSet = "PM";
-                                } else if (hour == 0) {
-                                    hour += 12;
-                                    timeSet = "AM";
-                                } else if (hour == 12) {
-                                    timeSet = "PM";
-                                } else {
-                                    timeSet = "AM";
-                                }
-
-                                String min = "";
-                                if (minutes < 10)
-                                    min = "0" + minutes;
-                                else
-                                    min = String.valueOf(minutes);
-
-                                // Append in a StringBuilder
-                                aTime = new StringBuilder().append(hour).append(':')
-                                        .append(min).append(" ").append(timeSet).toString();
-
-                                textPreviewDate.setText("The CFS will meet on " + strDate + " at " + aTime + " for what type of meeting?");
-                                editor.putString("time", aTime).commit();
-                                sessionTypeSpinner.setVisibility(View.VISIBLE);
-
-                                date=Date.parse(strDate+" "+aTime);
-                                editor.putLong("timetime",date).commit();
-                            }
-                        }, hour, minute, false);
-
-
-
-                timePickerDialog.show();
-
-                datePickerDialog.show();
-
-
-
-
-
-            }
-        });
 
         sessionTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -842,5 +763,78 @@ public class PlanFragment extends Fragment {
         });
         mActionBar.setCustomView(mCustomView);
         mActionBar.setDisplayShowCustomEnabled(true);
+    }
+
+    private void showDatePicker(){
+        final Calendar c1 = Calendar.getInstance();
+        int mYear = c1.get(Calendar.YEAR); // current year
+        int mMonth = c1.get(Calendar.MONTH); // current month
+        final int mDay = c1.get(Calendar.DAY_OF_MONTH);
+        // date picker dialog
+        final Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+
+        datePickerDialog = new DatePickerDialog(getActivity(),
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        // set day of month , month and year value in the edit text
+                        strDate = (monthOfYear + 1) + "/" + dayOfMonth + "/" + year;
+                        editor.putInt("Month", monthOfYear + 1).commit();
+                        editor.putInt("Day", mDay).commit();
+                        editor.putInt("Year", year).commit();
+                        editor.putString("Date", strDate).commit();
+
+                    }
+                }, mYear, mMonth, mDay);
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
+                new TimePickerDialog.OnTimeSetListener() {
+
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay,
+                                          int minute) {
+                        int hour = hourOfDay;
+                        int minutes = minute;
+                        String timeSet = "";
+                        if (hour > 12) {
+                            hour -= 12;
+                            timeSet = "PM";
+                        } else if (hour == 0) {
+                            hour += 12;
+                            timeSet = "AM";
+                        } else if (hour == 12) {
+                            timeSet = "PM";
+                        } else {
+                            timeSet = "AM";
+                        }
+
+                        String min = "";
+                        if (minutes < 10)
+                            min = "0" + minutes;
+                        else
+                            min = String.valueOf(minutes);
+
+                        // Append in a StringBuilder
+                        aTime = new StringBuilder().append(hour).append(':')
+                                .append(min).append(" ").append(timeSet).toString();
+
+                        textPreviewDate.setText("The CFS will meet on " + strDate + " at " + aTime + " for what type of meeting?");
+                        editor.putString("time", aTime).commit();
+                        sessionTypeSpinner.setVisibility(View.VISIBLE);
+
+                        date=Date.parse(strDate+" "+aTime);
+                        editor.putLong("timetime",date).commit();
+                    }
+                }, hour, minute, false);
+
+
+
+        timePickerDialog.show();
+
+        datePickerDialog.show();
     }
 }

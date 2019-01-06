@@ -31,4 +31,9 @@
         <item name="android:background">@drawable/rounded_shape</item>
     </style>
 
+
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Light">
+        <item name="android:windowFrame">@null</item>
+    </style>
+
 </resources>

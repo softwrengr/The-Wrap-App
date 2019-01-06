@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidlab.com.recaptube.R;
 
@@ -31,11 +32,11 @@ public class CFT_TabsFragment extends Fragment {
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        LinearLayout linearLayout = (LinearLayout)tabLayout.getChildAt(0);
+        LinearLayout linearLayout = (LinearLayout) tabLayout.getChildAt(0);
         linearLayout.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
         GradientDrawable drawable = new GradientDrawable();
         drawable.setColor(Color.GRAY);
-        drawable.setSize(1, 1);
+        drawable.setSize(0, 0);
         linearLayout.setDividerPadding(10);
         linearLayout.setDividerDrawable(drawable);
 
@@ -50,21 +51,21 @@ public class CFT_TabsFragment extends Fragment {
 
         viewPager.setAdapter(new PagerAdapter(((FragmentActivity) getActivity()).getSupportFragmentManager(), tabLayout.getTabCount()));
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        viewPager.setCurrentItem(0);
+        viewPager.setCurrentItem(0, true);
 
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         reduceMarginsInTabs(tabLayout, 20);
-        for(int i=0; i < tabLayout.getTabCount(); i++) {
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
             View tab = ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(i);
             ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) tab.getLayoutParams();
             p.setMargins(50, 0, 50, 0);
             tab.requestLayout();
         }
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+                viewPager.setCurrentItem(tab.getPosition(),true);
             }
 
             @Override
@@ -110,6 +111,7 @@ public class CFT_TabsFragment extends Fragment {
         public android.support.v4.app.Fragment getItem(int position) {
 
             switch (position) {
+
                 case 0:
                     Fragment frag1 = new CFT_MinutesFragment();
                     return frag1;
@@ -152,7 +154,7 @@ public class CFT_TabsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        viewPager.setCurrentItem(0);
+        viewPager.setCurrentItem(0,true);
     }
 }
 

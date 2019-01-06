@@ -29,6 +29,8 @@ public class CFT_WorriesFragment extends Fragment {
     }
 
     private void initUI(){
+        String ClientWorries = ETClientWorries.getText().toString();
+        GeneralUtils.putStringValueInEditor(getContext(),"ClientWorries",ClientWorries);
 
         ETClientWorries.addTextChangedListener(new TextWatcher() {
             @Override
@@ -45,7 +47,6 @@ public class CFT_WorriesFragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 String ClientWorries = ETClientWorries.getText().toString();
                 GeneralUtils.putStringValueInEditor(getContext(),"ClientWorries",ClientWorries);
-                Toast.makeText(getContext(), ClientWorries, Toast.LENGTH_SHORT).show();
             }
         });
     }

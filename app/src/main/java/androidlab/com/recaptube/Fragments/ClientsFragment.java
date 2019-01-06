@@ -52,6 +52,7 @@ import androidlab.com.recaptube.Controllers.ClientsDetailsModel;
 import androidlab.com.recaptube.R;
 import androidlab.com.recaptube.Utils.Alert_Utils;
 import androidlab.com.recaptube.Utils.Configuration;
+import androidlab.com.recaptube.Utils.GeneralUtils;
 
 
 public class ClientsFragment extends Fragment {
