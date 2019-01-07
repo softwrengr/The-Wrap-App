@@ -1,5 +1,6 @@
 package androidlab.com.recaptube.Fragments;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,6 +20,15 @@ public class ExtraFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_extra, container, false);
+
+
         return view;
+    }
+
+
+    private void showDialog(){
+        Dialog dialog = new Dialog(getActivity());
+        dialog.setContentView(R.layout.dialog4_layout);
+        dialog.show();
     }
 }

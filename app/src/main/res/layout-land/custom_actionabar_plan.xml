@@ -14,6 +14,18 @@
         android:id="@+id/tvPlanTitle"
         android:textColor="#fff"/>
 
+    <ImageView
+        android:id="@+id/iv_info"
+        android:layout_width="35sp"
+        android:layout_height="35sp"
+        android:src="@drawable/info_icon"
+        android:scaleType="fitXY"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="140sp" />
+
     <Button
         android:id="@+id/btnSummary"
         android:layout_width="wrap_content"
@@ -25,6 +37,7 @@
         android:visibility="gone"
         android:text="Summary"
         android:drawablePadding="8sp"
+        android:layout_centerVertical="true"
         android:paddingLeft="10sp"
         android:textSize="18sp"
         android:drawableRight="@drawable/ic_arrow_forward_black_24dp"

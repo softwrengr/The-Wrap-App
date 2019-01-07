@@ -2,6 +2,7 @@ package androidlab.com.recaptube.Fragments;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -11,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.CalendarContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -24,7 +26,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -35,6 +39,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import androidlab.com.recaptube.R;
+import androidlab.com.recaptube.Utils.GeneralUtils;
 
 
 public class PlanFragment extends Fragment {
@@ -44,7 +49,6 @@ public class PlanFragment extends Fragment {
 
     String strDate;
     String text, goals, textGoal, strUserGoal;
-    //TextView tvDate;
     DatePickerDialog datePickerDialog;
     String which = "for which type of meeting?";
     Spinner sessionTypeSpinner, goalSpinner, userGoalSPinner;
@@ -60,12 +64,15 @@ public class PlanFragment extends Fragment {
     SharedPreferences.Editor editor;
     Button btnPlan;
     CharSequence[] items;
-    String time, Fname, type, Lname;
+    String Fname, type, Lname;
     String tarikh = null;
     char first;
     long date;
     String aTime;
     String defaultTextForUserGoal = "The CFS will assist the client with the goal to ";
+    ScrollView planScrollView;
+    private int count = 0;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -87,7 +94,8 @@ public class PlanFragment extends Fragment {
         tvPreviewGoals = (TextView) view.findViewById(R.id.textPreviewForGoals);
         tvPreviewGoalsLayout = (LinearLayout) view.findViewById(R.id.textPreviewForGoalsLayout);
 
-       // tvDate = (TextView) view.findViewById(R.id.tvDate);
+        // tvDate = (TextView) view.findViewById(R.id.tvDate);
+        planScrollView = view.findViewById(R.id.plan_scrollview);
         sessionTypeSpinner = (Spinner) view.findViewById(R.id.spinnerSessionType);
         goalSpinner = (Spinner) view.findViewById(R.id.spinnerGoals);
         userGoalSPinner = (Spinner) view.findViewById(R.id.spinnerUserGoal);
@@ -99,7 +107,136 @@ public class PlanFragment extends Fragment {
 
         showDatePicker();
 
+        //populating second spinner
+        list.add("Goal");
+        String[] GoalsArray = goals.split(",");
+        items = new CharSequence[GoalsArray.length];
+        for (int j = 0; j < GoalsArray.length; j++) {
+            items[j] =GoalsArray[j];
+            list.add(GoalsArray[j]);
+        }
 
+        //populating 3rd spinner
+        list2.add("Goals");
+        String[] GoalsArray2 = goals.split(",");
+        items = new CharSequence[GoalsArray2.length];
+        for (int j = 0; j < GoalsArray2.length; j++) {
+            items[j] =GoalsArray2[j];
+            list2.add(GoalsArray2[j]);
+        }
+
+
+        return view;
+    }
+
+    private void customActionBar() {
+        android.support.v7.app.ActionBar mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        mActionBar.setDisplayShowHomeEnabled(false);
+        mActionBar.setDisplayShowTitleEnabled(false);
+        mActionBar.setDisplayHomeAsUpEnabled(true);
+        LayoutInflater mInflater = LayoutInflater.from(getActivity());
+        View mCustomView = mInflater.inflate(R.layout.custom_actionabar_plan, null);
+        ImageView ivInfo = mCustomView.findViewById(R.id.iv_info);
+        btnPlan=(Button)mCustomView.findViewById(R.id.btnSummary);
+        btnPlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("pText1",textPreviewDate.getText().toString()).commit();
+                editor.putString("pText2",tvPreviewGoals.getText().toString()).commit();
+                editor.putString("pText3",textPreviewForUserGoal.getText().toString()).commit();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.mainContainer, new FinalSummaryFragment()).commit();
+            }
+        });
+
+        ivInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              showDialog();
+            }
+        });
+        mActionBar.setCustomView(mCustomView);
+        mActionBar.setDisplayShowCustomEnabled(true);
+    }
+
+    private void showDatePicker(){
+        final Calendar c1 = Calendar.getInstance();
+        int mYear = c1.get(Calendar.YEAR); // current year
+        int mMonth = c1.get(Calendar.MONTH); // current month
+        final int mDay = c1.get(Calendar.DAY_OF_MONTH);
+        // date picker dialog
+        final Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+
+        datePickerDialog = new DatePickerDialog(getActivity(),
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        // set day of month , month and year value in the edit text
+                        strDate = (monthOfYear + 1) + "/" + dayOfMonth + "/" + year;
+                        editor.putInt("Month", monthOfYear + 1).commit();
+                        editor.putInt("Day", mDay).commit();
+                        editor.putInt("Year", year).commit();
+                        editor.putString("Date", strDate).commit();
+
+                    }
+                }, mYear, mMonth, mDay);
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
+                new TimePickerDialog.OnTimeSetListener() {
+
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay,
+                                          int minute) {
+                        int hour = hourOfDay;
+                        int minutes = minute;
+                        String timeSet = "";
+                        if (hour > 12) {
+                            hour -= 12;
+                            timeSet = "PM";
+                        } else if (hour == 0) {
+                            hour += 12;
+                            timeSet = "AM";
+                        } else if (hour == 12) {
+                            timeSet = "PM";
+                        } else {
+                            timeSet = "AM";
+                        }
+
+                        String min = "";
+                        if (minutes < 10)
+                            min = "0" + minutes;
+                        else
+                            min = String.valueOf(minutes);
+
+                        // Append in a StringBuilder
+                        aTime = new StringBuilder().append(hour).append(':')
+                                .append(min).append(" ").append(timeSet).toString();
+
+                        textPreviewDate.setText("The CFS will meet on " + strDate + " at " + aTime + " for what type of meeting?");
+                        editor.putString("time", aTime).commit();
+                        sessionTypeSpinner.setVisibility(View.VISIBLE);
+
+                        date=Date.parse(strDate+" "+aTime);
+                        editor.putLong("timetime",date).commit();
+                        showFirstSpinner();
+                    }
+                }, hour, minute, false);
+
+
+
+
+        timePickerDialog.show();
+        datePickerDialog.show();
+
+    }
+
+    private void showFirstSpinner() {
+
+        sessionTypeSpinner.performClick();
         sessionTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -264,6 +401,9 @@ public class PlanFragment extends Fragment {
                     }
                 }
 
+
+                showSecondSpinner();
+
             }
 
             @Override
@@ -271,17 +411,14 @@ public class PlanFragment extends Fragment {
 
             }
         });
+    }
 
-        list.add("Goal");
-        String[] GoalsArray = goals.split(",");
-        items = new CharSequence[GoalsArray.length];
-        for (int j = 0; j < GoalsArray.length; j++) {
-            items[j] =GoalsArray[j];
-            list.add(GoalsArray[j]);
-        }
+    private void showSecondSpinner(){
         adapter.notifyDataSetChanged();
         goalSpinner.setAdapter(adapter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        goalSpinner.performClick();
         goalSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -496,7 +633,7 @@ public class PlanFragment extends Fragment {
                         tvPreviewGoals.setText(textGoal);
                     }
                 }
-
+                showThirdSpinner();
             }
 
             @Override
@@ -504,16 +641,14 @@ public class PlanFragment extends Fragment {
 
             }
         });
-        list2.add("Goals");
-        String[] GoalsArray2 = goals.split(",");
-        items = new CharSequence[GoalsArray2.length];
-        for (int j = 0; j < GoalsArray2.length; j++) {
-            items[j] =GoalsArray2[j];
-            list2.add(GoalsArray2[j]);
-        }
+    }
+
+    private void showThirdSpinner(){
         adapter2.notifyDataSetChanged();
         userGoalSPinner.setAdapter(adapter2);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        userGoalSPinner.performClick();
         userGoalSPinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -739,102 +874,11 @@ public class PlanFragment extends Fragment {
 
             }
         });
-
-        return view;
     }
 
-    private void customActionBar() {
-        android.support.v7.app.ActionBar mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        mActionBar.setDisplayShowHomeEnabled(false);
-        mActionBar.setDisplayShowTitleEnabled(false);
-        mActionBar.setDisplayHomeAsUpEnabled(true);
-        LayoutInflater mInflater = LayoutInflater.from(getActivity());
-        View mCustomView = mInflater.inflate(R.layout.custom_actionabar_plan, null);
-        btnPlan=(Button)mCustomView.findViewById(R.id.btnSummary);
-        btnPlan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.putString("pText1",textPreviewDate.getText().toString()).commit();
-                editor.putString("pText2",tvPreviewGoals.getText().toString()).commit();
-                editor.putString("pText3",textPreviewForUserGoal.getText().toString()).commit();
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.mainContainer, new FinalSummaryFragment()).commit();
-            }
-        });
-        mActionBar.setCustomView(mCustomView);
-        mActionBar.setDisplayShowCustomEnabled(true);
-    }
-
-    private void showDatePicker(){
-        final Calendar c1 = Calendar.getInstance();
-        int mYear = c1.get(Calendar.YEAR); // current year
-        int mMonth = c1.get(Calendar.MONTH); // current month
-        final int mDay = c1.get(Calendar.DAY_OF_MONTH);
-        // date picker dialog
-        final Calendar c = Calendar.getInstance();
-        int hour = c.get(Calendar.HOUR_OF_DAY);
-        int minute = c.get(Calendar.MINUTE);
-
-        datePickerDialog = new DatePickerDialog(getActivity(),
-                new DatePickerDialog.OnDateSetListener() {
-
-                    @Override
-                    public void onDateSet(DatePicker view, int year,
-                                          int monthOfYear, int dayOfMonth) {
-                        // set day of month , month and year value in the edit text
-                        strDate = (monthOfYear + 1) + "/" + dayOfMonth + "/" + year;
-                        editor.putInt("Month", monthOfYear + 1).commit();
-                        editor.putInt("Day", mDay).commit();
-                        editor.putInt("Year", year).commit();
-                        editor.putString("Date", strDate).commit();
-
-                    }
-                }, mYear, mMonth, mDay);
-
-        TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(),
-                new TimePickerDialog.OnTimeSetListener() {
-
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay,
-                                          int minute) {
-                        int hour = hourOfDay;
-                        int minutes = minute;
-                        String timeSet = "";
-                        if (hour > 12) {
-                            hour -= 12;
-                            timeSet = "PM";
-                        } else if (hour == 0) {
-                            hour += 12;
-                            timeSet = "AM";
-                        } else if (hour == 12) {
-                            timeSet = "PM";
-                        } else {
-                            timeSet = "AM";
-                        }
-
-                        String min = "";
-                        if (minutes < 10)
-                            min = "0" + minutes;
-                        else
-                            min = String.valueOf(minutes);
-
-                        // Append in a StringBuilder
-                        aTime = new StringBuilder().append(hour).append(':')
-                                .append(min).append(" ").append(timeSet).toString();
-
-                        textPreviewDate.setText("The CFS will meet on " + strDate + " at " + aTime + " for what type of meeting?");
-                        editor.putString("time", aTime).commit();
-                        sessionTypeSpinner.setVisibility(View.VISIBLE);
-
-                        date=Date.parse(strDate+" "+aTime);
-                        editor.putLong("timetime",date).commit();
-                    }
-                }, hour, minute, false);
-
-
-
-        timePickerDialog.show();
-
-        datePickerDialog.show();
+    private void showDialog(){
+        Dialog dialog = new Dialog(getActivity());
+        dialog.setContentView(R.layout.info_dialog);
+        dialog.show();
     }
 }

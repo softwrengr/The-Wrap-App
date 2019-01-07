@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -74,7 +75,6 @@ public class Behavior2k extends Fragment {
         moodSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                check = false;
                 if (position == 0) {
                     firstText = "What was the client's mood?";
                     tvTopBehavior.setText("What was the client's mood?");
@@ -144,7 +144,7 @@ public class Behavior2k extends Fragment {
                     });
 
                 }
-
+                showGoalReporter();
 
             }
 
@@ -190,10 +190,49 @@ public class Behavior2k extends Fragment {
         if (!btn7.equals("")) {
             list.add(btn7);
         }
+
+
+        //list two for spinner two
+        list2.add("Goal");
+        String[] GoalsArray = goals.split(",");
+        items = new CharSequence[GoalsArray.length];
+        for (int j = 0; j < GoalsArray.length; j++) {
+            items[j] = GoalsArray[j];
+            list2.add(GoalsArray[j]);
+        }
+
+        return view;
+    }
+
+    private void customActionBar() {
+        android.support.v7.app.ActionBar mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        mActionBar.setDisplayShowHomeEnabled(false);
+        mActionBar.setDisplayShowTitleEnabled(false);
+        mActionBar.setDisplayHomeAsUpEnabled(true);
+        LayoutInflater mInflater = LayoutInflater.from(getActivity());
+        View mCustomView = mInflater.inflate(R.layout.custom_behavior, null);
+        btnPlan = (Button) mCustomView.findViewById(R.id.btnPlan);
+        btnPlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("bText1", tvTopBehavior.getText().toString()).commit();
+                editor.putString("bText2", tv2ndRow.getText().toString()).commit();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.mainContainer, new PlanFragment()).commit();
+            }
+        });
+        mActionBar.setCustomView(mCustomView);
+        mActionBar.setDisplayShowCustomEnabled(true);
+    }
+
+
+    private void showGoalReporter() {
+
+
+        reporterSpinner.performClick();
         adapter.notifyDataSetChanged();
         reporterSpinner.setAdapter(adapter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
 
         reporterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -236,6 +275,8 @@ public class Behavior2k extends Fragment {
                     tv2ndRow.setText(before2ndrow);
                     goalSpinner.setVisibility(View.VISIBLE);
                 }
+
+                showGoalSecondSpinner();
             }
 
             @Override
@@ -243,15 +284,11 @@ public class Behavior2k extends Fragment {
 
             }
         });
+    }
 
 
-        list2.add("Goal");
-        String[] GoalsArray = goals.split(",");
-        items = new CharSequence[GoalsArray.length];
-        for (int j = 0; j < GoalsArray.length; j++) {
-            items[j] = GoalsArray[j];
-            list2.add(GoalsArray[j]);
-        }
+    private void showGoalSecondSpinner() {
+
         adapter2.notifyDataSetChanged();
         goalSpinner.setAdapter(adapter2);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -727,29 +764,6 @@ public class Behavior2k extends Fragment {
 
             }
         });
-
-
-        return view;
     }
 
-    private void customActionBar() {
-        android.support.v7.app.ActionBar mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        mActionBar.setDisplayShowHomeEnabled(false);
-        mActionBar.setDisplayShowTitleEnabled(false);
-        mActionBar.setDisplayHomeAsUpEnabled(true);
-        LayoutInflater mInflater = LayoutInflater.from(getActivity());
-        View mCustomView = mInflater.inflate(R.layout.custom_behavior, null);
-        btnPlan = (Button) mCustomView.findViewById(R.id.btnPlan);
-        btnPlan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.putString("bText1", tvTopBehavior.getText().toString()).commit();
-                editor.putString("bText2", tv2ndRow.getText().toString()).commit();
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.mainContainer, new PlanFragment()).commit();
-            }
-        });
-        mActionBar.setCustomView(mCustomView);
-        mActionBar.setDisplayShowCustomEnabled(true);
-    }
 }
