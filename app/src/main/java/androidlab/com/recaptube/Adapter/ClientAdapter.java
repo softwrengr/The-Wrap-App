@@ -154,7 +154,7 @@ public class ClientAdapter extends BaseAdapter {
     }
 
     private void apicall() {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://trendingfashionable.ipage.com/Recaptube/singleClient_detail.php?id="+clientId
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://umerdurrani.design/eric_apis/singleClient_detail.php?id="+clientId
                 , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

@@ -17,7 +17,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dcd403a-8c9b-4b72-bcf1-214307e19baa" name="Default" comment="" />
+    <list default="true" id="2dcd403a-8c9b-4b72-bcf1-214307e19baa" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Adapter/ClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Adapter/ClientAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Utils/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Utils/Configuration.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,15 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="PlanFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/PlanFragment.java">
+      <file leaf-file-name="ClientAdapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Adapter/ClientAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="138" column="61" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
-              <folding>
-                <element signature="e#6223#6367#0" expanded="true" />
-                <element signature="e#6366#6367#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1700">
+              <caret line="156" column="113" selection-start-line="156" selection-start-column="113" selection-end-line="156" selection-end-column="113" />
             </state>
           </provider>
         </entry>
@@ -2106,8 +2112,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/AddClientFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Utils/Configuration.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Adapter/ClientAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/A_CFTMinutesFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_cftsecond.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/CFT_Fragments/CFT_FourthFragment.java" />
@@ -2150,6 +2154,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/PlanFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/info_dialog.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/custom_actionabar_plan.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Utils/Configuration.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Adapter/ClientAdapter.java" />
       </list>
     </option>
   </component>
@@ -2163,8 +2169,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2175,22 +2179,54 @@
             <path>
               <item name="The-Wrap-App" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="The-Wrap-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="androidlab" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Wrap-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="androidlab" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Wrap-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="androidlab" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="recaptube" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Wrap-App" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="androidlab" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="recaptube" type="462c0819:PsiDirectoryNode" />
+              <item name="Fragments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/PlanFragment.java&#10;pla&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/PlanFragment.java&#10;beh&#9;PSI&#9;JAVA://androidlab.com.recaptube.Fragments.PraiseTabs.PraiseBehaviourFragment&#10;beha&#9;PSI&#9;JAVA://androidlab.com.recaptube.Fragments.Behavior2k&#10;cl&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/ClientProgressNote.java&#10;cF&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/CFT_Fragments/CFT_TabsFragment.java&#10;CFT&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/CFT_Fragments/CFT_MinutesFragment.java&#10;cli&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/ClientProgressNote.java&#10;clien&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/ClientProgressNote.java&#10;fragment_clien&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/res/layout-land/fragment_client_progress_note.xml&#10;intr&#9;PSI&#9;JAVA://androidlab.com.recaptube.Fragments.IntroductionScreen1Fragment&#10;plan&#9;PSI&#9;JAVA://androidlab.com.recaptube.Fragments.PlanFragment&#10;Gen&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Utils/GeneralUtils.java&#10;Con&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Utils/Configuration.java" />
-    <property name="device.picker.selection" value="Nexus_7_2012_API_28" />
+    <property name="SearchEverywhereHistoryKey" value="Con&#9;PSI&#9;JAVA://androidlab.com.recaptube.Utils.Configuration&#10;pla&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/PlanFragment.java&#10;beh&#9;PSI&#9;JAVA://androidlab.com.recaptube.Fragments.PraiseTabs.PraiseBehaviourFragment&#10;beha&#9;PSI&#9;JAVA://androidlab.com.recaptube.Fragments.Behavior2k&#10;cl&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/ClientProgressNote.java&#10;cF&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/CFT_Fragments/CFT_TabsFragment.java&#10;CFT&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/CFT_Fragments/CFT_MinutesFragment.java&#10;cli&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/ClientProgressNote.java&#10;clien&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Fragments/ClientProgressNote.java&#10;fragment_clien&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/res/layout-land/fragment_client_progress_note.xml&#10;intr&#9;PSI&#9;JAVA://androidlab.com.recaptube.Fragments.IntroductionScreen1Fragment&#10;plan&#9;PSI&#9;JAVA://androidlab.com.recaptube.Fragments.PlanFragment&#10;Gen&#9;FILE&#9;file:///Users/eapple/Documents/GitHub/The-Wrap-App/app/src/main/java/androidlab/com/recaptube/Utils/GeneralUtils.java" />
+    <property name="device.picker.selection" value="26EBB18415153131" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1546929316947" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1547467935174" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -2422,11 +2458,19 @@
       <option name="project" value="LOCAL" />
       <updated>1546889778246</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="info icon and dailog work done">
+      <created>1546929362994</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1546929362994</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="750" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -2435,7 +2479,6 @@
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Preview" order="3" weight="0.39006513" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32753164" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -2453,6 +2496,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Preview" order="3" weight="0.39006513" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2471,7 +2515,8 @@
     <MESSAGE value="CFT work done" />
     <MESSAGE value="updated" />
     <MESSAGE value="dialog opening done." />
-    <option name="LAST_COMMIT_MESSAGE" value="dialog opening done." />
+    <MESSAGE value="info icon and dailog work done" />
+    <option name="LAST_COMMIT_MESSAGE" value="info icon and dailog work done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2496,23 +2541,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/InterventionFragment1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_task_grid.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_discussion_tablayout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
@@ -2702,27 +2730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/ClientsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
-          <folding>
-            <element signature="e#4286#4563#0" expanded="true" />
-            <element signature="e#4562#4563#0" expanded="true" />
-            <element signature="e#5205#5482#0" expanded="true" />
-            <element signature="e#5481#5482#0" expanded="true" />
-            <element signature="e#5932#6871#0" expanded="true" />
-            <element signature="e#6368#6566#0" expanded="true" />
-            <element signature="e#6565#6566#0" expanded="true" />
-            <element signature="e#6611#6809#0" expanded="true" />
-            <element signature="e#6808#6809#0" expanded="true" />
-            <element signature="e#6870#6871#0" expanded="true" />
-            <element signature="e#14701#14996#0" expanded="true" />
-            <element signature="e#14995#14996#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_extra.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
@@ -2856,17 +2863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/ClientProgressNote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="2959" selection-start-line="2959" selection-end-line="2959" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2603#2611#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_plan.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-157">
@@ -2919,12 +2915,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/PlanFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
+        <state relative-caret-position="550">
           <caret line="138" column="61" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
-          <folding>
-            <element signature="e#6223#6367#0" expanded="true" />
-            <element signature="e#6366#6367#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Utils/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/ClientsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Fragments/ClientProgressNote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42600">
+          <caret line="2959" selection-start-line="2959" selection-end-line="2959" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/androidlab/com/recaptube/Adapter/ClientAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1700">
+          <caret line="156" column="113" selection-start-line="156" selection-start-column="113" selection-end-line="156" selection-end-column="113" />
         </state>
       </provider>
     </entry>
