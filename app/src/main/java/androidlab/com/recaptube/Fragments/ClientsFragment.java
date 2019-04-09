@@ -4,6 +4,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -171,6 +174,11 @@ public class ClientsFragment extends Fragment {
                 emailDialog.show();
             }
         });
+
+        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Ringtone r = RingtoneManager.getRingtone(getActivity().getApplicationContext(), notification);
+        r.play();
+
         dialog1.show();
     }
     public static void deleteCache(Context context) {
@@ -257,7 +265,8 @@ public class ClientsFragment extends Fragment {
                 break;
 
             case R.id.mileage:
-
+                Fragment fragment6 = new MileageFragment();
+                getFragmentManager().beginTransaction().replace(R.id.mainContainer, fragment6).addToBackStack("abc").commit();
                 break;
 
             case R.id.addClient:
@@ -333,8 +342,8 @@ public class ClientsFragment extends Fragment {
                     alertDialog.dismiss();
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Toast.makeText(getActivity(), "Network Error", Toast.LENGTH_SHORT).show();
-                } else if (error instanceof ServerError) {
-                    Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_SHORT).show();
+                //} else if (error instanceof ServerError) {
+                //    Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof NetworkError) {
                     Toast.makeText(getActivity(), "Network Error", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof ParseError) {
@@ -371,6 +380,7 @@ public class ClientsFragment extends Fragment {
         mActionBar.setDisplayShowHomeEnabled(true);
         LayoutInflater mInflater = LayoutInflater.from(getActivity());
         View mCustomView = mInflater.inflate(R.layout.custom_actionbar, null);
+
         ImageView imageView = (ImageView) mCustomView.findViewById(R.id.iv);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -379,6 +389,21 @@ public class ClientsFragment extends Fragment {
              getFragmentManager().beginTransaction().replace(R.id.mainContainer,fragment).addToBackStack("abc").commit();
             }
         });
+
+
+        TextView textView = (TextView) mCustomView.findViewById(R.id.productivity);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+                LayoutInflater inflater = getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.custom_profile, null);
+                dialogBuilder.setView(dialogView);
+                AlertDialog alertDialog = dialogBuilder.create();
+                alertDialog.show();
+            }
+        });
+
         mActionBar.setCustomView(mCustomView);
         mActionBar.setDisplayShowCustomEnabled(true);
 

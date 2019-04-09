@@ -4,9 +4,9 @@
     <color name="colorPrimaryDark">#566BB6</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="colorControlActivated">#42221f</color>
-    <color name="colorSwitchThumbNormal">#42221f</color>
-    <color name="colorForeground">#42221f</color>
+    <color name="colorControlActivated">#FF4081</color>
+    <color name="colorSwitchThumbNormal">#FF4081</color>
+    <color name="colorForeground">#FF4081</color>
 
     <color name="black_overlay">#66000000</color>
     <color name="black">#000</color>

@@ -89,6 +89,9 @@ import java.util.TimeZone;
 import javax.mail.Session;
 
 import androidlab.com.recaptube.R;
+import androidlab.com.recaptube.Utils.Configuration;
+import androidlab.com.recaptube.Utils.GeneralUtils;
+import androidlab.com.recaptube.Utils.GmailSender;
 
 public class FinalSummaryFragment extends Fragment {
 
@@ -97,7 +100,8 @@ public class FinalSummaryFragment extends Fragment {
     EditText progressNoteEditText;
     Button btnSubmit;
     Session session = null;
-    TextView startDate, endDate, tvTime, tvAddress, tvOtherCodes;
+    TextView startDate, endDate, tvTime, tvAddress, tvOtherCodes, tvAcknowledgement;
+    ImageView ivSig;
     ProgressDialog pdialog = null;
     Context context = null;
     String getIntroduction2k1, getBehviorText1, getBehviorText2, getIntervention, getResponse, getPtext1, getPtext2, getPtext3, getSelectedGoal;
@@ -125,7 +129,7 @@ public class FinalSummaryFragment extends Fragment {
     String ServiceSite, date2k1, dateAndTime2k1, abc, clientPresence, ClientInvolved, EncounterWith;
     String strAddress1, strAddress2, strDistance, strTime, strShowDistance, strURL, path, strShowTime, strStreet, strZip, strStreet2, strZip2;
     String strDisplayTime, progressNoteText, timeRowText, addressText, otherCodesText, strAllInfo;
-    String staticTime="",staticDistance="";
+    String staticTime = "", staticDistance = "";
     LinearLayout textNotificationRow, tmsgs;
     boolean flag1, flag2, flag3, flag4;
 
@@ -156,6 +160,8 @@ public class FinalSummaryFragment extends Fragment {
         progressNoteEditText = (EditText) view.findViewById(R.id.progressNoteEditText);
         tvTime = (TextView) view.findViewById(R.id.tvTime);
         tvAddress = (TextView) view.findViewById(R.id.tvAddress);
+        tvAcknowledgement = (TextView) view.findViewById(R.id.tvAcknowledgement);
+        ivSig = (ImageView) view.findViewById(R.id.ivSig);
         tvOtherCodes = (TextView) view.findViewById(R.id.tvOtherCodes);
         textNotificationRow = (LinearLayout) view.findViewById(R.id.tmsgs);
         tmsgs = (LinearLayout) view.findViewById(R.id.TextNotificationRow);
@@ -195,43 +201,14 @@ public class FinalSummaryFragment extends Fragment {
         strStreet2 = sharedPreferences.getString("street2", "null");
         strZip2 = sharedPreferences.getString("zip2", "null");
 
-
-        Log.d("abdullah",String.valueOf(date));
-
-        showDistanceTime(strAddress1,strAddress2);
-
-        ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},1);
-
-        Dexter.withActivity(getActivity())
-                .withPermissions(
-                        Manifest.permission.INTERNET,
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.ACCESS_FINE_LOCATION
-
-                ).withListener(new MultiplePermissionsListener() {
-            @Override
-            public void onPermissionsChecked(MultiplePermissionsReport report) {
-                Log.d("zma","permission granted");
-            }
-
-            @Override
-            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
-
-            }
-
-
-        }).check();
+        showDistanceTime(strAddress1, strAddress2);
+        ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+        Configuration.grantPermision(getActivity());
 
         Log.d("show", "this is my address" + strAddress1);
         Log.d("show", "this is my address2" + strAddress2);
 
-//        requestForPlaceApi();
-
         first = Fname.charAt(0);
-
         mCredential = new GoogleAccountCredential(getActivity(), "softwrengr@gmail.com");
 
         java.util.Calendar c = java.util.Calendar.getInstance();
@@ -276,8 +253,6 @@ public class FinalSummaryFragment extends Fragment {
                         "********** PLAN **********\n" +
                         getPtext1 + " " + getPtext2 + " " + getPtext3;
 
-//        final String timeRowText =
-//        final String addressText =
         addressText =
                 "" + "    " + path + "\n\n" +
                         "                 Distance    " + staticDistance + "\n" +
@@ -288,13 +263,12 @@ public class FinalSummaryFragment extends Fragment {
                         "   Service Facility State" + "    " + "CA" + "\n" +
                         "Service Facility Zip Code" + "    " + address2Zip + "\n";
 
-//        final String otherCodesText =
         if (clientPresence.equals("yes")) {
             ClientInvolved = "Yes";
         } else {
             ClientInvolved = "No";
         }
-            otherCodesText =
+        otherCodesText =
                 "          Client Involved" + "    " + ClientInvolved + "\n" +
                         "       Family Collaterals" + "    " + String.valueOf(familyMembers) + "\n" +
                         "   Non-Family Collaterals" + "    " + String.valueOf(other + friends) + "\n" +
@@ -355,7 +329,7 @@ public class FinalSummaryFragment extends Fragment {
                                         .append(min).toString();
                                 abc = startDate.getText().toString();
                                 startDate.setText(abc + " at " + startAtime);
-                                Log.d("date",startDate.getText().toString());
+                                Log.d("date", startDate.getText().toString());
 
                             }
                         }, hour, minute, false);
@@ -467,7 +441,7 @@ public class FinalSummaryFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                strAllInfo = progressNoteText  + timeRowText  + addressText + otherCodesText;
+                strAllInfo = progressNoteText + timeRowText + addressText + otherCodesText;
                 generateNoteOnSD(strAllInfo);
                 createEvent();
                 if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
@@ -491,14 +465,14 @@ public class FinalSummaryFragment extends Fragment {
                     return;
                 }
                 showDialog();
-                Fragment fragment = new ClientsFragment();
-                getFragmentManager().beginTransaction().replace(R.id.mainContainer, fragment).addToBackStack("abc").commit();
+                GeneralUtils.connectFragmentWithBackStack(getActivity(),new ClientsFragment());
 
             }
         });
 
         return view;
     }
+
     private void showDialog() {
         dialog = new Dialog(getActivity());
         dialog.setContentView(R.layout.congo_dialog_layout);
@@ -510,11 +484,13 @@ public class FinalSummaryFragment extends Fragment {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sendMail(strAllInfo);
                 dialog.dismiss();
             }
         });
         dialog.show();
     }
+
     public void makeLayoutVisible() {
         if (flag1 && flag2 && flag3 && flag4) {
             tvTime.setVisibility(View.VISIBLE);
@@ -524,9 +500,11 @@ public class FinalSummaryFragment extends Fragment {
             tmsgs.setVisibility(View.VISIBLE);
             progressNoteEditText.setVisibility(View.VISIBLE);
             btnSubmit.setVisibility(View.VISIBLE);
+            ivSig.setVisibility(View.VISIBLE);
+            tvAcknowledgement.setVisibility(View.VISIBLE);
 
-        }
-        else {
+
+        } else {
             tvTime.setVisibility(View.GONE);
             tvAddress.setVisibility(View.GONE);
             tvOtherCodes.setVisibility(View.GONE);
@@ -536,18 +514,6 @@ public class FinalSummaryFragment extends Fragment {
             btnSubmit.setVisibility(View.GONE);
         }
     }
-
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        if(requestCode ==   1){
-//            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-//                requestForPlaceApi();
-//                Log.d("zma","permission granted");
-//                Toast.makeText(context, "permission granted", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//    }
 
     public void CalculateTime(int start, int end) {
         int finalTime = end - start + 1;
@@ -610,8 +576,6 @@ public class FinalSummaryFragment extends Fragment {
             }
 
             File gpxfile = new File(root, fileName);
-
-
             FileWriter writer = new FileWriter(gpxfile, true);
             writer.append(sBody + "\n\n");
             writer.flush();
@@ -623,34 +587,18 @@ public class FinalSummaryFragment extends Fragment {
 
     }
 
-    public void sendMail() {
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("message/rfc822");
-        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"SBHGApp@gmail.com"});
-        i.putExtra(Intent.EXTRA_SUBJECT, "subject of email");
-        i.putExtra(Intent.EXTRA_TEXT, "body of email");
-        try {
-            startActivity(Intent.createChooser(i, "Send mail..."));
-        } catch (android.content.ActivityNotFoundException ex) {
+    public void sendMail(String body) {
+//        GmailSender gmailSender = new GmailSender(getActivity(), "ericramos1990@gmail.com", "Summary", body);
+//        gmailSender.execute();
+        Intent send = new Intent(Intent.ACTION_SENDTO);
+        String uriText = "mailto:" + Uri.encode("ericramos1990@gmail.com") +
+                "?subject=" + Uri.encode("Summary") +
+                "&body=" + Uri.encode(body);
+        Uri uri = Uri.parse(uriText);
 
-        }
+        send.setData(uri);
+        startActivity(Intent.createChooser(send, "Send mail..."));
     }
-
-    public String getCurrentTimeStamp() {
-        try {
-
-            SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
-            currentDateTime = dateFormat.format(new Date()); // Find todays date
-
-            return currentDateTime;
-        } catch (Exception e) {
-            e.printStackTrace();
-
-            return null;
-        }
-    }
-
-
 
     private void customActionBar() {
         android.support.v7.app.ActionBar mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
@@ -684,26 +632,22 @@ public class FinalSummaryFragment extends Fragment {
         long eventID = Long.parseLong(eventUri.getLastPathSegment());
 
     }
-
     //============================
 
-    public void showDistanceTime(String address1,String address2){
+    public void showDistanceTime(String address1, String address2) {
         String street1 = strStreet.replace(" ", "-");
         String street2 = strStreet2.replace(" ", "-");
         path = "https://maps.google.com/maps/api/directions/" + street1 + "+" + strZip + "/" + street2 + "+" + strZip2;
 
-         if(address1.equals("11155 183rd StCerritosCA 90703") && address2.equals("1625 W. Olympic BlvdLos AngelesCA 90015")){
+        if (address1.equals("11155 183rd StCerritosCA 90703") && address2.equals("1625 W. Olympic BlvdLos AngelesCA 90015")) {
             staticTime = "38";
             staticDistance = "20.4 miles";
-        }
-
-        else if(address1.equals("1625 W. Olympic BlvdLos AngelesCA 90015") && address2.equals("11155 183rd StCerritosCA 90703")){
+        } else if (address1.equals("1625 W. Olympic BlvdLos AngelesCA 90015") && address2.equals("11155 183rd StCerritosCA 90703")) {
             staticTime = "38";
             staticDistance = "20.4 miles";
-        }
-        else {
-             staticDistance = "14.6 miles";
-             staticTime = "31";
+        } else {
+            staticDistance = "14.6 miles";
+            staticTime = "31";
         }
 
     }

@@ -102,7 +102,15 @@ public class ClientAdapter extends BaseAdapter {
         viewHolder.cView= convertView.findViewById(R.id.contestentImage);
         String fnm = model.getClinetFname();
         if ("Mark".equals(fnm) || "Rayleen".equals(fnm)) {
-            viewHolder.cView.setImageResource(R.drawable.client2);
+            viewHolder.cView.setImageResource(R.drawable.client4e);
+        } else if ("Cassie".equals(fnm)) {
+            viewHolder.cView.setImageResource(R.drawable.client9);
+        } else if ("Jimmy".equals(fnm)) {
+            viewHolder.cView.setImageResource(R.drawable.client5);
+        } else if ("Reyna".equals(fnm)) {
+            viewHolder.cView.setImageResource(R.drawable.client3);
+        } else if ("Robert".equals(fnm)) {
+            viewHolder.cView.setImageResource(R.drawable.client7);
         }
         viewHolder.textView.setText(model.getClientLname() + ", " + fnm);
         viewHolder.linearLayout=(LinearLayout)convertView.findViewById(R.id.linearLayout);
@@ -154,7 +162,7 @@ public class ClientAdapter extends BaseAdapter {
     }
 
     private void apicall() {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://umerdurrani.design/eric_apis/singleClient_detail.php?id="+clientId
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://trendingfashionable.ipage.com/Recaptube/singleClient_detail.php?id="+clientId
                 , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -219,8 +227,8 @@ public class ClientAdapter extends BaseAdapter {
 
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
                     Toast.makeText(context, "Network Error", Toast.LENGTH_SHORT).show();
-                } else if (error instanceof ServerError) {
-                    Toast.makeText(context, "Server Error", Toast.LENGTH_SHORT).show();
+                //} else if (error instanceof ServerError) {
+                //    Toast.makeText(context, "Server Error", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof NetworkError) {
                     Toast.makeText(context, "Network Error", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof ParseError) {

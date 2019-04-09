@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="400dp"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="30dp"
     android:orientation="vertical"
     android:layout_gravity="center">
 
@@ -17,21 +18,32 @@
         android:layout_marginBottom="20dp"/>
 
     <TextView
-        android:text="Client goals will expire in 11 days"
+        android:text="Client goals will expire in 11 days."
         android:id="@+id/myalertdialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginBottom="20dp"/>
     <TextView
-        android:text="Client has not been seen in 4 days"
+        android:text="Client will turn 7 next Tuesday."
         android:id="@+id/myalertdialog2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:text="Client only has 7/11 scheduled sessions. Please schedule additional sessions."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"/>
 
     <Button
         android:id="@+id/dialogFourBtn"

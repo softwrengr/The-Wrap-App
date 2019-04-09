@@ -10,11 +10,11 @@
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_gravity="center"
         android:id="@+id/contestentImage"
-        android:src="@mipmap/client"
+        android:src="@drawable/client1"
         />
     <!--<de.hdodenhof.circleimageview.v-->
         <!--android:layout_width="50dp"-->

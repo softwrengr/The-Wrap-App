@@ -1,6 +1,9 @@
 package androidlab.com.recaptube.Fragments;
 
 import android.app.Dialog;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -110,7 +113,7 @@ public class TaskGridFragment extends Fragment implements View.OnClickListener {
                 @Override
                 public void onClick(View v) {
                     editor.putBoolean("isDilogOpen", false).commit();
-                    showDialog2(18);
+                    showDialog2(15);
                     dialog1.dismiss();
                 }
             });
@@ -131,6 +134,9 @@ public class TaskGridFragment extends Fragment implements View.OnClickListener {
                 dialog2.dismiss();
             }
         });
+        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Ringtone r = RingtoneManager.getRingtone(getActivity().getApplicationContext(), notification);
+        r.play();
         dialog2.show();
     }
 

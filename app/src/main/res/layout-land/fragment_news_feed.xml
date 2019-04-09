@@ -20,13 +20,6 @@
             android:adjustViewBounds="true"
             android:cropToPadding="false"
             android:src="@drawable/newsfeed1" />
-        <!--
-            <ImageView
-                android:layout_width="900dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/newsfeed2" />
-        -->
         </LinearLayout>
 
     </ScrollView>

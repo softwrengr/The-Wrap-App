@@ -21,14 +21,16 @@
                 android:layout_height="200sp"
                 android:layout_gravity="center"
                 android:src="@drawable/logo"/>
+
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_margin="20sp"
-                android:inputType="textEmailAddress"
                 android:background="@null"
-                android:hint="Email"/>
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:text="eramos@starsinc.com" />
 
 
             <EditText
@@ -36,9 +38,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_margin="20sp"
-                android:inputType="textPassword"
                 android:background="@null"
-                android:hint="Password"/>
+                android:hint="Password"
+                android:inputType="textPassword" />
             <Button
                 android:id="@+id/btnSignIn"
                 android:layout_width="match_parent"

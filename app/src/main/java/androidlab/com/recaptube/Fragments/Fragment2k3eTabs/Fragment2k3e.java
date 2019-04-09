@@ -9,15 +9,22 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidlab.com.recaptube.Fragments.Behavior2k;
+import androidlab.com.recaptube.Fragments.Fragment2k3f;
+import androidlab.com.recaptube.Fragments.InterventionFragment1;
 import androidlab.com.recaptube.R;
+import androidlab.com.recaptube.Utils.GeneralUtils;
 
 
 public class Fragment2k3e extends Fragment {
@@ -34,7 +41,7 @@ public class Fragment2k3e extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_fragment2k3e, container, false);
-
+        customActionBar();
         sharedPreferences = getActivity().getSharedPreferences("recap", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         textPreview=(TextView)view.findViewById(R.id.textPreview2K3e1);
@@ -127,5 +134,23 @@ public class Fragment2k3e extends Fragment {
         public int getCount() {
             return mNumOfTabs;
         }
+    }
+
+    private void customActionBar() {
+        android.support.v7.app.ActionBar mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        mActionBar.setDisplayShowHomeEnabled(false);
+        mActionBar.setDisplayShowTitleEnabled(false);
+        mActionBar.setDisplayHomeAsUpEnabled(true);
+        LayoutInflater mInflater = LayoutInflater.from(getActivity());
+        View mCustomView = mInflater.inflate(R.layout.custom_actionbar_2k3e, null);
+        Button btnSkip= mCustomView.findViewById(R.id.btnSkip);
+        btnSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GeneralUtils.connectFragmentWithBackStack(getActivity(),new Fragment2k3f());
+            }
+        });
+        mActionBar.setCustomView(mCustomView);
+        mActionBar.setDisplayShowCustomEnabled(true);
     }
 }

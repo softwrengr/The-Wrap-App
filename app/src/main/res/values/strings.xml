@@ -10,10 +10,12 @@
     <string name="com.google.android.geo.API_KEY">AIzaSyCbuAooOEnFlWE3JFINgbktSq3Qw9PA8R4</string>
 
     <string name="title_activity_image_full_screen">ImageFullScreenActivity</string>
-    
-    
-    
+
+
     <string name="minutes">15 Minute Consultation with Capri</string>
     <string name="please">Plese include your phone number and I will reach you at that time of your call ;)</string>
     <string name="times">Eastern Time - US and Canada</string>
+
+    <string name="hometext">44.3% ✔   59.2% ⌚</string>
+
 </resources>

@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidlab.com.recaptube.R;
 
@@ -40,13 +39,13 @@ public class CFT_TabsFragment extends Fragment {
         linearLayout.setDividerPadding(10);
         linearLayout.setDividerDrawable(drawable);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Time"));
         tabLayout.addTab(tabLayout.newTab().setText("Sign In"));
+        tabLayout.addTab(tabLayout.newTab().setText("What's Working"));
         tabLayout.addTab(tabLayout.newTab().setText("Mission Statement"));
         tabLayout.addTab(tabLayout.newTab().setText("Non-Negotiables"));
         tabLayout.addTab(tabLayout.newTab().setText("Rules"));
-        tabLayout.addTab(tabLayout.newTab().setText("What's Working"));
         tabLayout.addTab(tabLayout.newTab().setText("Worries"));
+        tabLayout.addTab(tabLayout.newTab().setText("Time"));
         tabLayout.addTab(tabLayout.newTab().setText("Conclude"));
 
         viewPager.setAdapter(new PagerAdapter(((FragmentActivity) getActivity()).getSupportFragmentManager(), tabLayout.getTabCount()));
@@ -113,15 +112,15 @@ public class CFT_TabsFragment extends Fragment {
             switch (position) {
 
                 case 0:
-                    Fragment frag1 = new CFT_MinutesFragment();
+                    Fragment frag1 = new CFT_SignIn();
                     return frag1;
 
                 case 1:
-                    Fragment frag2 = new CFTSecondFragment();
+                    Fragment frag2 = new CFT_WhatsWorking();
                     return frag2;
 
                 case 2:
-                    Fragment frag3 = new CFT_ThirdFragment();
+                    Fragment frag3 = new CFT_MissionStatement();
                     return frag3;
                 case 3:
                     Fragment frag4 = new CFT_NonNegotiableFragment();
@@ -130,10 +129,10 @@ public class CFT_TabsFragment extends Fragment {
                     Fragment frag5 = new CFT_RulesFragment();
                     return frag5;
                 case 5:
-                    Fragment frag6 = new CFT_FourthFragment();
+                    Fragment frag6 = new CFT_WorriesFragment();
                     return frag6;
                 case 6:
-                    Fragment frag7 = new CFT_WorriesFragment();
+                    Fragment frag7 = new CFT_Time();
                     return frag7;
                 case 7:
                     Fragment frag8 = new CFT_SubmitFragment();

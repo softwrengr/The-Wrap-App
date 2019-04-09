@@ -8,6 +8,11 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/mileage"
+        android:title="Mileage"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/todolist"
         android:title="To Do List"
         app:showAsAction="never" />
@@ -16,11 +21,6 @@
         android:id="@+id/scheduled"
         android:layout_width="wrap_content"
         android:title="Scheduled Notifications"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/mileage"
-        android:title="Mileage"
         app:showAsAction="never" />
 
     <item

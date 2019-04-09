@@ -80,7 +80,6 @@ public class GeneralUtils {
         return getSharedPreferences(context).getString("ClientGoal","");
     }
 
-    //end
 
     public static String getDate(Context context){
         return getSharedPreferences(context).getString("cft_date","");
@@ -90,5 +89,8 @@ public class GeneralUtils {
     public static String getClientWorries(Context context){
         return getSharedPreferences(context).getString("ClientWorries","");
     }
-    //end
+
+    public static String getText(Context context){
+        return getSharedPreferences(context).getString("text","");
+    }
 }

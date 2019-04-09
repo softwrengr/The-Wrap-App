@@ -1,7 +1,5 @@
 package androidlab.com.recaptube.Fragments.CFT_Fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -10,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidlab.com.recaptube.R;
 import androidlab.com.recaptube.Utils.GeneralUtils;
@@ -21,7 +18,7 @@ public class CFT_WorriesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_cft__fifth, container, false);
+        View view =  inflater.inflate(R.layout.fragment_cft_worries, container, false);
 
         ETClientWorries = (EditText) view.findViewById(R.id.ClientWorries);
         initUI();

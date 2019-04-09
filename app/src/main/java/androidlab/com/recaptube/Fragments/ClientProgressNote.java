@@ -3261,7 +3261,8 @@ public class ClientProgressNote extends Fragment implements View.OnClickListener
             });
         }
         else {
-            Toast.makeText(getActivity(), "not showing", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), "not showing", Toast.LENGTH_SHORT).show();
+            ;
         }
     }
 

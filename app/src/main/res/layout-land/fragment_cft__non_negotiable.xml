@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#566BB6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.CFT_Fragments.CFT_NonNegotiableFragment">
+    android:orientation="vertical">
 
-    <LinearLayout
+
+    <TextView
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Non Negotiables"
-            android:textSize="18dp"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/NonNegotiables"
-            android:hint="Non Negotiables"
-            android:text="Court Mandates\nAttend CFT meetings"
-            android:textSize="18dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+        android:text="Non Negotiables"
+        android:textSize="60dp"
+        android:layout_gravity="center"/>
 
-</FrameLayout>
+
+
+    <EditText
+        android:layout_marginLeft="30dp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/NonNegotiables"
+        android:hint="Non Negotiables"
+        android:text="Court Mandates\nAttend CFT meetings"
+        android:textSize="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
